@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { LoginPage } from './login/login.page';
 import { SignInPage } from './sign-in/sign-in.page';
+import { TransferirPixPage } from './transferir-pix/transferir-pix.page';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ClipboardModule } from '@angular/cdk/clipboard';
@@ -18,7 +19,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, LoginPage, SignInPage],
+  declarations: [AppComponent, LoginPage, SignInPage, TransferirPixPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule, NoopAnimationsModule, 
     ClipboardModule, MatSnackBarModule, BrowserAnimationsModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

@@ -36,6 +36,10 @@ export class AreaPixPage {
     this.router.navigate(['perguntas-frequentes-area-pix']);
   }  
 
+  navigateToTransferirPix() {
+    this.router.navigate(['transferir-pix']);
+  }  
+
   copyText(txt: string): void {
     if (txt){
       this.clipboardService.copyToClipboard(txt);

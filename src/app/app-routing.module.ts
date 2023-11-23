@@ -87,6 +87,10 @@ const routes: Routes = [
     path: 'perguntas-frequentes-pagar',
     loadChildren: () => import('./perguntas-frequentes-pagar/perguntas-frequentes-pagar.module').then( m => m.PerguntasFrequentesPagarPageModule)
   },
+  {
+    path: 'transferir-pix',
+    loadChildren: () => import('./transferir-pix/transferir-pix.module').then( m => m.TransferirPixPageModule)
+  },
 ];
 
 @NgModule({

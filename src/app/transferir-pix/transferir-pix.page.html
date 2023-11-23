@@ -1,0 +1,9 @@
+<ion-content [fullscreen]="true">
+
+      <form [formGroup]="transferirForm" class="transparent flexColumn">
+        <input formControlName="destinatario" class="loginTxtBox" placeholder="Destinatario">
+        <input formControlName="quantia" class="loginTxtBox" placeholder="Quantia">
+        <button type="button" (click)="transferir()" class="loginButton">Transferir</button>
+      </form> 
+
+</ion-content>

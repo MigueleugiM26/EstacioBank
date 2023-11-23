@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, UserCredential } from 'firebase/auth';
-import { doc, setDoc, Firestore, getFirestore } from 'firebase/firestore';
+import { doc, setDoc, getFirestore } from 'firebase/firestore';
 import { getDocs, getDoc, query, where } from 'firebase/firestore';
-import { collection, addDoc } from "firebase/firestore"; 
-import { initializeApp } from "firebase/app";
+import { collection } from "firebase/firestore"; 
 import { db } from "../main";
-import { Timestamp } from '@firebase/firestore';
 
 let currentUser: string | "";
 
@@ -305,5 +303,9 @@ export class AuthService {
     } else {
       return null;
     }
+  }
+
+  getCurrentUser () {
+    return currentUser;
   }
 }
