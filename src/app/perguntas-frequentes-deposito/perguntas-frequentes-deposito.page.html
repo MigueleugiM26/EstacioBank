@@ -1,13 +1,103 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>perguntasFrequentesDeposito</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="fundo">
+  <div>
+    <div class="voltarDiv" (click) = 'goBack()'>
+      <img src="../../assets/Imagens/arrowLeft.png" class="voltarIcon">
+      <p class="voltarTxt">Voltar</p>
+    </div>
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">perguntasFrequentesDeposito</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="flexColumn">
+    <ion-accordion-group class="perguntasAccordion" [multiple]="true" expand="inset">
+      <ion-accordion value="1">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para realizar um depósito no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Para realizar um depósito, acesse a seção de Depósitos no aplicativo, escolha a opção "Realizar Depósito" e siga as instruções para concluir a transação.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="2">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Quais métodos posso usar para realizar um depósito na minha conta?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Você pode realizar depósitos em sua conta no Estácio Bank através de transferências bancárias, depósitos em caixas eletrônicos parceiros e outros métodos disponíveis na seção de Depósitos.</ion-label>
+        </div>
+      </ion-accordion>
+      
+      <ion-accordion value="3">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Há algum valor mínimo ou máximo para depósitos no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Não, no Estácio Bank é possível depositar o quanto você quiser.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="4">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">É possível realizar depósitos em cheque no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Não, no momento nós do Estácio Bank não aceitamos cheques.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="5">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Os depósitos realizados estão sujeitos a alguma taxa?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">O Estácio Bank não cobra taxas pelos depósitos realizados. Este serviço é oferecido gratuitamente aos nossos clientes.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="6">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para verificar o status de um depósito recente na minha conta?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Para verificar o status de um depósito recente, acesse a seção de Depósitos e vá para a opção "Histórico de Depósitos" para visualizar as transações realizadas.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="7">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Posso agendar depósitos para uma data futura no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Em algumas circunstâncias, pode ser possível agendar depósitos para uma data futura. Consulte a seção de Depósitos para verificar se essa opção está disponível.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="8">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para cancelar um depósito que acabei de realizar?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Geralmente, depósitos não podem ser cancelados uma vez concluídos. Certifique-se de revisar todas as informações antes de confirmar a transação.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="9">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Os depósitos realizados estão disponíveis imediatamente na minha conta?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Normalmente, os depósitos são processados e ficam disponíveis na conta quase que imediatamente, mas o tempo exato pode depender do método de depósito utilizado.</ion-label>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </div>
+
+  <div>
+    <div class="footer">
+      <div class="flexRow">
+        <img src="../../assets/Imagens/Estácio Logo Banco.png" class="iconFooter">
+        <p class="txtFooter">Estácio Bank</p>
+      </div>
+    </div>
+  </div>
+  
 </ion-content>

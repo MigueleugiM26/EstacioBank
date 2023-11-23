@@ -13,4 +13,8 @@ export class DepositarPage {
   navigateToMenuPrincipal() {
     this.router.navigate(['menu-principal']);
   }  
+
+  navigateToAjuda() {
+    this.router.navigate(['perguntas-frequentes-deposito']);
+  }  
 }

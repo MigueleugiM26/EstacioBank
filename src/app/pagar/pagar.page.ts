@@ -21,6 +21,10 @@ export class PagarPage {
     this.router.navigate(['menu-principal']);
   }  
 
+  navigateToAjuda() {
+    this.router.navigate(['perguntas-frequentes-pagar']);
+  }  
+
   copyText(txt: string): void {
     if (txt){
       this.clipboardService.copyToClipboard(txt);

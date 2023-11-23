@@ -1,0 +1,103 @@
+<ion-content [fullscreen]="true" class="fundo">
+  <div>
+    <div class="voltarDiv" (click) = 'goBack()'>
+      <img src="../../assets/Imagens/arrowLeft.png" class="voltarIcon">
+      <p class="voltarTxt">Voltar</p>
+    </div>
+  </div>
+
+  <div class="flexColumn">
+    <ion-accordion-group class="perguntasAccordion" [multiple]="true" expand="inset">
+      <ion-accordion value="1">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para realizar um pagamento no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Para efetuar um pagamento, acesse a seção de Pagamentos no aplicativo, escolha a opção "Realizar Pagamento" e siga as instruções para inserir os detalhes do pagamento.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="2">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Quais métodos de pagamento posso utilizar no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">O Estácio Bank aceita uma variedade de métodos de pagamento, incluindo transferências bancárias, Pix, e cartões de débito ou crédito vinculados à sua conta.</ion-label>
+        </div>
+      </ion-accordion>
+      
+      <ion-accordion value="3">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">É possível agendar pagamentos para uma data futura no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Sim, você pode agendar pagamentos para uma data futura. Ao realizar um pagamento, selecione a opção de agendamento e escolha a data desejada.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="4">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Há algum custo associado aos pagamentos realizados no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">O Estácio Bank pode cobrar taxas associadas a determinados tipos de pagamentos. Consulte as informações específicas na seção de Pagamentos para verificar a existência de custos.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="5">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Posso realizar pagamentos em estabelecimentos comerciais usando o aplicativo do Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Sim, o aplicativo do Estácio Bank pode oferecer a funcionalidade de pagamentos em estabelecimentos comerciais. Verifique as opções disponíveis na seção de Pagamentos.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="6">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para configurar pagamentos recorrentes no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Para configurar pagamentos recorrentes, acesse a seção de Pagamentos, escolha a opção "Pagamentos Recorrentes" e siga as instruções para definir as configurações desejadas.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="7">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">É possível realizar pagamentos para contas de outros bancos no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Sim, você pode efetuar pagamentos para contas de outros bancos utilizando a funcionalidade de transferências interbancárias disponível no Estácio Bank.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="8">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para visualizar o histórico de pagamentos na minha conta?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Na seção de Pagamentos, vá para a opção "Histórico de Pagamentos" para visualizar todas as transações de pagamento realizadas.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="9">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Existe um limite de valor para pagamentos no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">O Estácio Bank estabelece limites de valor para transações de pagamento, que podem variar com base no perfil e histórico do cliente. Consulte a seção de Pagamentos para mais informações.</ion-label>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </div>
+
+  <div>
+    <div class="footer">
+      <div class="flexRow">
+        <img src="../../assets/Imagens/Estácio Logo Banco.png" class="iconFooter">
+        <p class="txtFooter">Estácio Bank</p>
+      </div>
+    </div>
+  </div>
+  
+</ion-content>

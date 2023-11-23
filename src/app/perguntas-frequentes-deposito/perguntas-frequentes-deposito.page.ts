@@ -12,4 +12,7 @@ export class PerguntasFrequentesDepositoPage implements OnInit {
   ngOnInit() {
   }
 
+  goBack() {
+    window.history.back();
+  }
 }

@@ -14,4 +14,8 @@ export class InvestirPage {
   navigateToMenuPrincipal() {
     this.router.navigate(['menu-principal']);
   }  
+
+  navigateToAjuda() {
+    this.router.navigate(['perguntas-frequentes-investir']);
+  } 
 }

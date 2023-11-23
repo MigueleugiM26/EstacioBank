@@ -79,6 +79,14 @@ const routes: Routes = [
     path: 'perguntas-frequentes-deposito',
     loadChildren: () => import('./perguntas-frequentes-deposito/perguntas-frequentes-deposito.module').then( m => m.PerguntasFrequentesDepositoPageModule)
   },
+  {
+    path: 'perguntas-frequentes-investir',
+    loadChildren: () => import('./perguntas-frequentes-investir/perguntas-frequentes-investir.module').then( m => m.PerguntasFrequentesInvestirPageModule)
+  },
+  {
+    path: 'perguntas-frequentes-pagar',
+    loadChildren: () => import('./perguntas-frequentes-pagar/perguntas-frequentes-pagar.module').then( m => m.PerguntasFrequentesPagarPageModule)
+  },
 ];
 
 @NgModule({
