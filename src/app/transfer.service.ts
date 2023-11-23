@@ -39,6 +39,11 @@ import { AlertController } from '@ionic/angular';
             alert("Dinheiro insuficiente.");
             return;
           }
+
+          if (numericAmount <= 0) {
+            alert("Valor inválido..");
+            return;
+          }
   
           let recipientQueryField = 'cpf';
           let recipientDocs = await getDocs(query(this.usersCollectionRef, where(recipientQueryField, '==', recipient)));
