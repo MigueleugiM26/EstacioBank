@@ -55,6 +55,13 @@ export class MenuPrincipalPage {
     this.router.navigate(['menu-principal-escondido']);
   }
 
+  refresh(): void {
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
+  }
+
   navigateToPerguntasFrequentes () {
     this.router.navigate(['perguntas-frequentes']);
   }

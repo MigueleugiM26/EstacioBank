@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { EmptyComponent } from './empty.component';
 
 const routes: Routes = [
+  { path: 'refresh', component: EmptyComponent },
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
