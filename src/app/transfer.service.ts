@@ -41,7 +41,7 @@ import { AlertController } from '@ionic/angular';
           }
 
           if (numericAmount <= 0) {
-            alert("Valor inválido..");
+            alert("Valor inválido.");
             return;
           }
   
