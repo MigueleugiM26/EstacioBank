@@ -97,8 +97,7 @@ import { AlertController } from '@ionic/angular';
           header: 'Confirmação',
           message: `
             Você vai transferir R$${quantia} para ${destinatario}.
-            CPF: ${formattedCPF}.
-            Chave Aleatória: ${chaveAleatoria}.
+            CPF: ${formattedCPF} | Chave Aleatória: ${chaveAleatoria}.
             Confirmar?
           `,
           buttons: [
