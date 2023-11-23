@@ -1,0 +1,7 @@
+{
+  "name": "Estácio Bank",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
