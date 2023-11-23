@@ -21,6 +21,10 @@ export class CobrarPage {
     this.router.navigate(['menu-principal']);
   }  
 
+  navigateToAjuda() {
+    this.router.navigate(['perguntas-frequentes-cobrar']);
+  }  
+
   copyText(txt: string): void {
     if (txt){
       this.clipboardService.copyToClipboard(txt);

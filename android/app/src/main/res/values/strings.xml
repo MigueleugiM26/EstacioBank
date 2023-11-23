@@ -4,4 +4,8 @@
     <string name="title_activity_main">Estácio Bank</string>
     <string name="package_name">io.ionic.starter</string>
     <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="permission_rationale">Permitir que o aplicativo acesse a câmera?</string>
+    <string name="camera_title">Escolher uma fonte</string>
+    <string name="camera_item_photo_library">Da galeria de fotos</string>
+    <string name="camera_item_take_picture">Tirar uma foto</string>
 </resources>

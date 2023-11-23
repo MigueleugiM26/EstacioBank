@@ -1,0 +1,79 @@
+@import '../../indigoVariables.scss';
+
+*{
+    font-family:'Times New Roman', Times, serif;
+}
+
+.fundo {
+    background: $bg !important;
+    --background-color: $bg !important;
+    --background: $bg !important;
+}
+
+.voltarDiv {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    justify-content: left;
+    align-items: center;
+}
+
+.voltarIcon {
+    width: 2rem;
+}
+
+.voltarTxt {
+    font-size: 2vh;
+    color: $fonte;
+    margin: 0;
+    margin-left: 0.5rem;
+}
+
+.perguntasAccordion {
+    margin-top: 2rem;
+    width: 80%;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordionHeader {
+    font-size: 2vh;
+    white-space: normal;
+}
+
+.accordionContent {
+    font-size: 2vh;
+    padding: 2rem;
+}
+
+.footer {
+    margin-top: 2rem;
+    width: 100%;
+    background: $primary !important;
+
+    bottom: 0;
+}
+
+.iconFooter {
+    width: 3rem;
+    margin-right: 1rem;
+}
+
+.txtFooter {
+    font-size: 3vh;
+    color: white;
+}

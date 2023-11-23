@@ -1,0 +1,103 @@
+<ion-content [fullscreen]="true" class="fundo">
+  <div>
+    <div class="voltarDiv" (click) = 'goBack()'>
+      <img src="../../assets/Imagens/arrowLeft.png" class="voltarIcon">
+      <p class="voltarTxt">Voltar</p>
+    </div>
+  </div>
+
+  <div class="flexColumn">
+    <ion-accordion-group class="perguntasAccordion" [multiple]="true" expand="inset">
+      <ion-accordion value="1">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como posso cadastrar uma chave Pix no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Todos os usuários recebem uma Chave Pix ao criar uma conta no Estácio Bank. Também é possível usar o CPF como Chave Pix.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="2">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">É possível ter mais de uma chave Pix na mesma conta?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Sim, você pode ter 2 chaves Pix na sua conta do Estácio Bank: seu CPF e uma Chave Aleatória. Assim é possível ter uma maior flexibilidade para receber pagamentos.</ion-label>
+        </div>
+      </ion-accordion>
+      
+      <ion-accordion value="3">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para realizar um pagamento usando a funcionalidade Pix?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Para efetuar um pagamento Pix, vá para a opção "Transferências" na Área Pix, escolha a chave do destinatário e insira o valor desejado. Confirme a transação e pronto!</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="4">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Existe algum custo associado às transações Pix no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">O Estácio Bank não cobra taxas por transações Pix. As operações Pix são isentas de tarifas, proporcionando conveniência e economia aos nossos clientes.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="5">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Posso agendar pagamentos utilizando o Pix no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Sim, é possível agendar pagamentos Pix. Ao realizar uma transferência, escolha a opção de agendamento e selecione a data desejada para a transação.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="6">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para consultar as transações Pix realizadas na minha conta?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">No Menu Principal, vá para o histórico de transações para visualizar todas as operações Pix realizadas, incluindo pagamentos e recebimentos.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="7">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Existe um limite de valor para transações Pix no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">O Estácio Bank estabelece limites de valor para transações Pix, que podem variar com base no perfil e histórico do cliente. Consulte a Área Pix para mais informações.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="8">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como posso cancelar uma transação Pix no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Em situações específicas, é possível solicitar o cancelamento de uma transação Pix. Acesse a Área Pix, vá para o histórico de transações e siga as instruções para cancelamento, se disponível.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="9">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">As chaves Pix são sensíveis a maiúsculas e minúsculas?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Sim, as Chaves Aleatórias são sensíveis a maiúsculas e minúsculas. Certifique-se de que você digitou a Chave correta. Informações sobre o destinatário serão exibidas antes da confirmação da transação.</ion-label>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </div>
+
+  <div>
+    <div class="footer">
+      <div class="flexRow">
+        <img src="../../assets/Imagens/Estácio Logo Banco.png" class="iconFooter">
+        <p class="txtFooter">Estácio Bank</p>
+      </div>
+    </div>
+  </div>
+  
+</ion-content>

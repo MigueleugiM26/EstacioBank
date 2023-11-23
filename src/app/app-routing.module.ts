@@ -67,6 +67,18 @@ const routes: Routes = [
     path: 'transferir',
     loadChildren: () => import('./transferir/transferir.module').then( m => m.TransferirPageModule)
   },
+  {
+    path: 'perguntas-frequentes-area-pix',
+    loadChildren: () => import('./perguntas-frequentes-area-pix/perguntas-frequentes-area-pix.module').then( m => m.PerguntasFrequentesAreaPixPageModule)
+  },
+  {
+    path: 'perguntas-frequentes-cobrar',
+    loadChildren: () => import('./perguntas-frequentes-cobrar/perguntas-frequentes-cobrar.module').then( m => m.PerguntasFrequentesCobrarPageModule)
+  },
+  {
+    path: 'perguntas-frequentes-deposito',
+    loadChildren: () => import('./perguntas-frequentes-deposito/perguntas-frequentes-deposito.module').then( m => m.PerguntasFrequentesDepositoPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,103 @@
+<ion-content [fullscreen]="true" class="fundo">
+  <div>
+    <div class="voltarDiv" (click) = 'goBack()'>
+      <img src="../../assets/Imagens/arrowLeft.png" class="voltarIcon">
+      <p class="voltarTxt">Voltar</p>
+    </div>
+  </div>
+
+  <div class="flexColumn">
+    <ion-accordion-group class="perguntasAccordion" [multiple]="true" expand="inset">
+      <ion-accordion value="1">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como posso gerar uma cobrança no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Para gerar uma cobrança, acesse a Tela de Cobranças no aplicativo, escolha a opção "Gerar Cobrança" e preencha as informações necessárias, incluindo o valor e a descrição da cobrança.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="2">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Quais informações são necessárias para gerar uma cobrança?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Ao gerar uma cobrança, você precisará especificar o valor, a descrição e, opcionalmente, adicionar uma data de vencimento. Certifique-se de incluir os detalhes necessários para uma cobrança precisa.</ion-label>
+        </div>
+      </ion-accordion>
+      
+      <ion-accordion value="3">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">É possível programar cobranças para uma data futura?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Sim, você pode agendar cobranças para uma data futura. Ao gerar uma cobrança, selecione a opção de agendamento e escolha a data desejada para o vencimento.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="4">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para visualizar as cobranças pendentes na minha conta?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Na Tela de Cobranças, vá para a seção "Cobranças Pendentes" para visualizar todas as cobranças agendadas e seus respectivos status.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="5">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Posso editar uma cobrança já gerada?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Não, após criada, não é possível editar uma cobrança.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="6">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Existe algum custo associado à geração de cobranças no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">O Estácio Bank não cobra taxas pela geração de cobranças. Esse serviço é oferecido gratuitamente aos nossos clientes.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="7">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para pagar uma cobrança recebida no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Ao receber uma cobrança, você será notificado na Tela de Cobranças. Selecione a cobrança e escolha a opção "Pagar" para efetuar o pagamento.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="8">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Qual é o prazo para o pagamento de uma cobrança no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">O prazo de pagamento de uma cobrança varia de acordo com a data de vencimento especificada durante a geração. Certifique-se de efetuar o pagamento antes do vencimento para evitar atrasos.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="9">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Posso visualizar o histórico de cobranças na minha conta?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Sim, você pode acessar o histórico completo de cobranças na Tela de Cobranças para consultar todas as transações passadas.</ion-label>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </div>
+
+  <div>
+    <div class="footer">
+      <div class="flexRow">
+        <img src="../../assets/Imagens/Estácio Logo Banco.png" class="iconFooter">
+        <p class="txtFooter">Estácio Bank</p>
+      </div>
+    </div>
+  </div>
+  
+</ion-content>
