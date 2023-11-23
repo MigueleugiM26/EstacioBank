@@ -26,7 +26,7 @@
     margin: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -64,6 +64,15 @@
     align-items: center;
 }
 
+.flexRow2 {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    text-align: center;
+}
+
 .flexColumn {
     display: flex;
     flex-direction: column;
@@ -85,7 +94,7 @@
     color: $fonte;
     font-size: 4vh;
     margin-left: 1.5rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .tituloPagarReceber2 {
@@ -136,10 +145,10 @@
 .txtPagarReceber {
     color: $fonte;
     font-size: 2vh;
-    text-align: center;
+    text-align: left;
     margin: 0;
     margin-top: 0.5rem;
-    margin-left: -1.5rem;
+    margin-left: 1.5rem;
 }
 
 .iconChaves {
@@ -147,7 +156,8 @@
 }
 
 .iconChaves2 {
-    width: 2rem;
+    width: 3rem;
+    margin-left: 1.5rem;
 }
 
 .txtChaves {
@@ -366,7 +376,7 @@
 }
 
 .form {
-    margin-top: 15rem;
+    margin-top: 5rem;
     margin-bottom: 15.9rem;
 }
 

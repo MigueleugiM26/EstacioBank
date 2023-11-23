@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { QrPagarPageRoutingModule } from './qr-pagar-routing.module';
-
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { QrPagarPage } from './qr-pagar.page';
 
 @NgModule({
@@ -13,8 +13,10 @@ import { QrPagarPage } from './qr-pagar.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    QrPagarPageRoutingModule
+    QrPagarPageRoutingModule,
+    ZXingScannerModule
   ],
   declarations: [QrPagarPage]
 })
 export class QrPagarPageModule {}
+

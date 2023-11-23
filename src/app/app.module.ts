@@ -17,17 +17,22 @@ import { LinkPagarPage } from './link-pagar/link-pagar.page';
 import { CopiaColaPixPage } from './copia-cola-pix/copia-cola-pix.page';
 import { QrCobrarPage } from './qr-cobrar/qr-cobrar.page';
 import { NovaTransferenciaPage } from './nova-transferencia/nova-transferencia.page';
+import { InvestirEstacioPage } from './investir-estacio/investir-estacio.page';
+import { InvestirTechvestPage } from './investir-techvest/investir-techvest.page';
+import { InvestirEcogrowPage } from './investir-ecogrow/investir-ecogrow.page';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [AppComponent, LoginPage, SignInPage, TransferirPixPage, LinkCobrarPage, 
-    LinkPagarPage, CopiaColaPixPage, NovaTransferenciaPage, QrCobrarPage],
+    LinkPagarPage, CopiaColaPixPage, NovaTransferenciaPage, QrCobrarPage, InvestirEstacioPage, InvestirTechvestPage, 
+    InvestirEcogrowPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule, NoopAnimationsModule, 
-    ClipboardModule, MatSnackBarModule, BrowserAnimationsModule,],
+    ClipboardModule, MatSnackBarModule, BrowserAnimationsModule, ZXingScannerModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

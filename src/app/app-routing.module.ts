@@ -116,6 +116,18 @@ const routes: Routes = [
     path: 'qr-pagar',
     loadChildren: () => import('./qr-pagar/qr-pagar.module').then( m => m.QrPagarPageModule)
   },
+  {
+    path: 'investir-estacio',
+    loadChildren: () => import('./investir-estacio/investir-estacio.module').then( m => m.InvestirEstacioPageModule)
+  },
+  {
+    path: 'investir-techvest',
+    loadChildren: () => import('./investir-techvest/investir-techvest.module').then( m => m.InvestirTechvestPageModule)
+  },
+  {
+    path: 'investir-ecogrow',
+    loadChildren: () => import('./investir-ecogrow/investir-ecogrow.module').then( m => m.InvestirEcogrowPageModule)
+  },
 
 ];
 

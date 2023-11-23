@@ -15,6 +15,18 @@ export class InvestirPage {
     this.router.navigate(['menu-principal']);
   }  
 
+  navigateToEstacio() {
+    this.router.navigate(['investir-estacio']);
+  }  
+
+  navigateToTechvest() {
+    this.router.navigate(['investir-techvest']);
+  }  
+
+  navigateToEcogrow() {
+    this.router.navigate(['investir-ecogrow']);
+  }  
+
   navigateToAjuda() {
     this.router.navigate(['perguntas-frequentes-investir']);
   } 

@@ -1,0 +1,35 @@
+<ion-content [fullscreen]="true" class="fundo">
+  <div class="header">
+    <div class="voltarDiv" (click) = 'goBack()'>
+      <img src="../../assets/Imagens/arrowLeft.png" class="voltarIcon">
+      <p class="voltarTxt">Voltar</p>
+    </div>
+
+    <div>
+      <p class="telaTitulo">Investir<br>(Estácio)</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="flexRow2">
+      <img src="../../assets/Imagens/Estácio Logo Banco.png" class="iconChaves2">
+      <p class="tituloPagarReceber">Estácio</p>
+    </div>
+    <p class="txtPagarReceber">Taxa de Sucesso: {{ sucesso }}%</p>
+    <p class="txtPagarReceber">Porcentagem de Lucros: {{ lucro }}%</p>
+  </div>
+
+  <form [formGroup]="investirForm" class="transparent flexColumn form">
+    <input formControlName="quantia" class="loginTxtBox" placeholder="Valor do Investimento">
+    <button type="button" class="loginButton" (click)="investir()">Investir</button>
+  </form> 
+
+  <div>
+    <div class="footer">
+      <div class="flexRow">
+        <img src="../../assets/Imagens/Estácio Logo Banco.png" class="iconFooter">
+        <p class="txtFooter">Estácio Bank</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
