@@ -45,7 +45,8 @@ export class LinkCobrarPage implements OnInit {
       return;
     }
   
-    const result = `https://estaciobank.com/c${cpf}d${numericAmount}`;
+    const encryptedPart = btoa(`c${cpf}d${numericAmount}`);
+    const result = `https://estaciobank.com/${encryptedPart}`;
     this.copyText(result);
   }
   

@@ -26,8 +26,11 @@ export class LinkPagarPage implements OnInit {
 
   async pagar(): Promise<{ cpf: string; amount: number } | null> {
     const link = this.pagarForm.get('link')?.value!;
-    const match = link.match(/\/c(\d+)d(\d+)/);
-  
+    const encryptedPart = link.replace('https://estaciobank.com/', '');
+    const decryptedPart = atob(encryptedPart);
+    const reconstructedLink = `https://estaciobank.com/${decryptedPart}`;
+    const match = reconstructedLink.match(/c(\d+)d(\d+)/);
+      
     if (match) {
       const cpf = match[1];
       const amount = match[2];
