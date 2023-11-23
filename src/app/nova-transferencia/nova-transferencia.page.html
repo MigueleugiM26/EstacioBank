@@ -6,13 +6,14 @@
     </div>
 
     <div>
-      <p class="telaTitulo">Copia Cola (Pix)</p>
+      <p class="telaTitulo">Nova<br>Transferência</p>
     </div>
   </div>
 
-  <form [formGroup]="pagarForm" class="transparent flexColumn form">
-    <input formControlName="link" class="loginTxtBox" placeholder="Link do Pagamento">
-    <button type="button" class="loginButton" (click)="pagar()">Pix</button>
+  <form [formGroup]="transferirForm" class="transparent flexColumn form">
+    <input formControlName="destinatario" class="loginTxtBox" placeholder="CPF">
+    <input formControlName="quantia" class="loginTxtBox" placeholder="Quantia">
+    <button type="button" (click)="transferir()" class="loginButton">Transferir</button>
   </form> 
 
   <div>

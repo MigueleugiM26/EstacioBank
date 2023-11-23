@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CopiaColaPixPageRoutingModule } from './copia-cola-pix-routing.module';
+import { NovaTransferenciaPageRoutingModule } from './nova-transferencia-routing.module';
 
-import { CopiaColaPixPage } from './copia-cola-pix.page';
+import { NovaTransferenciaPage } from './nova-transferencia.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CopiaColaPixPageRoutingModule
+    NovaTransferenciaPageRoutingModule
   ],
   declarations: []
 })
-export class CopiaColaPixPageModule {}
+export class NovaTransferenciaPageModule {}

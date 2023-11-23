@@ -103,6 +103,10 @@ const routes: Routes = [
     path: 'link-pagar',
     loadChildren: () => import('./link-pagar/link-pagar.module').then( m => m.LinkPagarPageModule)
   },
+  {
+    path: 'nova-transferencia',
+    loadChildren: () => import('./nova-transferencia/nova-transferencia.module').then( m => m.NovaTransferenciaPageModule)
+  },
 ];
 
 @NgModule({

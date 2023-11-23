@@ -13,4 +13,8 @@ export class TransferirPage {
   navigateToMenuPrincipal() {
     this.router.navigate(['menu-principal']);
   }  
+
+  navigateToNovaTransferencia() {
+    this.router.navigate(['nova-transferencia']);
+  }  
 }
