@@ -24,3 +24,46 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+:root {
+    --ion-color-branco: linear-gradient(to top, #3b4c78, #394974, #37466f, #35446b, #334167, #323f64, #303e62, #2f3c5f, #2e3b5c, #2d395a, #2d3857, #2c3755);
+    --ion-color-branco-rgb: 59, 76, 120;
+    --ion-color-branco-contrast: #e0e0e0;
+    --ion-color-branco-contrast-rgb: 59, 76, 120;
+    --ion-color-branco-shade: #e0e0e0;
+    --ion-color-branco-tint: linear-gradient(to top, #303d60, #2e3a5c, #2c3858, #2a3555, #283351, #27314e, #25304b, #242e48, #232c45, #222b42, #212940, #20283d);
+  }
+  
+  .ion-color-branco {
+    --ion-color-base: var(--ion-color-branco);
+    --ion-color-base-rgb: var(--ion-color-branco-rgb);
+    --ion-color-contrast: var(--ion-color-branco-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-branco-contrast-rgb);
+    --ion-color-shade: var(--ion-color-branco-shade);
+    --ion-color-tint: var(--ion-color-branco-tint);
+  }
+  
+  div[slot='content'] {
+    background: rgba(var(--ion-color-branco-rgb), 0.25);
+  }
+
+  .custom-snackbar {
+    all: initial;
+    * {
+      all: unset;
+    }
+
+    background: #1f1f1f !important;
+    box-shadow: none !important;
+    color: white !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: absolute !important;
+    bottom: 3rem !important;
+    width: 70% !important;
+    max-width: 70% !important;
+    border-radius: 20px !important;
+  }

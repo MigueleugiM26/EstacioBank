@@ -1,0 +1,137 @@
+@import '../../indigoVariables.scss';
+
+*{
+    font-family:'Times New Roman', Times, serif;
+}
+
+.titleHeader {
+    background: $primary !important;
+    height: 5rem;
+
+    display: flex !important;
+    flex-direction: row;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-left: 2rem;
+}
+
+.titleTxt {
+    color: $fonte;
+    font-size: 3vh;
+}
+
+.logo {
+    width: 3rem;
+}
+
+.fundoLogin {
+    background-image: url('../../assets/Imagens/Pessoas.jpg') !important;
+    background-size: cover;
+    background-position: -13rem;
+    background-attachment: fixed !important;
+
+    height: 100%;
+    min-height: 40rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginTxtBox {
+    background-color: $secondary;
+    color: $fonte;
+    margin-bottom: 1rem;
+    width: 12rem;
+    height: 3rem;
+    font-size: 1.75vh;
+    padding-left: 1.5rem !important;
+    border-bottom: 2px solid transparent;
+    border-radius: 75px;
+    text-decoration: none;
+}
+
+.has-focus {
+    border: 2px solid #144BC8 !important;
+}
+
+.loginButton {
+    background: $primary;
+    color: $fonte;
+    width: 15rem;
+    height: 4rem;
+    font-size: 3vh;
+    border-radius: 75px !important;
+    margin-top: 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginButton:hover {
+    background: $hover;
+    cursor: pointer;
+}
+.loginButton:active {
+    background: $click;
+    cursor: pointer;
+}
+
+.div1 {
+    margin-top: 20rem;
+    background-color: transparent !important;
+}
+
+.transparent {
+    background-color: transparent !important;
+    background: transparent !important;
+    --background-color: transparent;
+    --background: transparent;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.criarContaDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: $primary;
+    border-radius: 40px;
+    width: 10rem;
+    height: 2.5rem;
+
+    margin-top: 2rem;
+}
+.criarContaDiv:hover {
+    background: $hover;
+    cursor: pointer;
+}
+.criarContaDiv:active {
+    background: $click;
+    cursor: pointer;
+}
+
+.contaTxt1 {
+    color: $fonte;
+    margin: 0;
+    font-size: 1.5vh;
+}
+
+.contaTxt2 {
+    color: $fonte;
+    margin: 0;
+    font-size: 1.5vh;
+    text-decoration: underline;
+}

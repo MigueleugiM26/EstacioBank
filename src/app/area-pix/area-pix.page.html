@@ -1,0 +1,161 @@
+<ion-content [fullscreen]="true" class="fundo">
+  <div class="header">
+    <div class="voltarDiv" (click) = 'navigateToMenuPrincipal ()'>
+      <img src="../../assets/Imagens/arrowLeft.png" class="voltarIcon">
+      <p class="voltarTxt">Voltar</p>
+    </div>
+
+    <div>
+      <p class="telaTitulo">Área Pix</p>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <p class="tituloPagarReceber">Pagar e Receber</p>
+    </div>
+
+    <div class="div1">
+        <div class="flexColumn">
+          <div class="divPagarReceber">
+            <img src="../../assets/Imagens/pixTransferir.png" class="iconPagarReceber">
+          </div>
+          <p class="txtPagarReceber">Transferir</p>
+        </div>
+
+        <div class="flexColumn">
+          <div class="divPagarReceber" (click)="scan()">
+            <img src="../../assets/Imagens/qrCode.png" class="iconPagarReceber">
+          </div>
+          <p class="txtPagarReceber">Pagar com<br>QR</p>
+        </div>
+
+        <div class="flexColumn">
+          <div class="divPagarReceber">
+            <img src="../../assets/Imagens/copiarColar.png" class="iconPagarReceber">
+          </div>
+          <p class="txtPagarReceber">Pix Copia<br>e Cola</p>
+        </div>
+
+        <div class="flexColumn">
+          <div class="divPagarReceber">
+            <img src="../../assets/Imagens/pixTransferir.png" class="iconPagarReceber" style="rotate: 180deg  ;">
+          </div>
+          <p class="txtPagarReceber">Cobrar</p>
+        </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <p class="tituloPagarReceber2">Minhas Chaves</p>
+    </div>
+
+    <div class="divChaves">
+      <div class="container">
+        <div class="Circulo">
+          <img src="../../assets/Imagens/cpf.png" class="iconChaves2">
+        </div>
+        <div class="Texto-1">
+          <div class="P1">
+            <p class="txtChaves">{{ cpf }}</p>
+          </div>
+
+          <div class="P2">
+            <p class="txtChaves">CPF</p>
+          </div>
+        </div>
+
+        <div class="Texto-2">
+          <div class="P3" (click)="cpf && shareText(cpf)"><img src="../../assets/Imagens/compartilhar.png" class="iconChaves"></div>
+          <div class="P4" (click)="cpf && copyText(cpf)"><img src="../../assets/Imagens/copiarColar.png" class="iconChaves"></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="Circulo">
+          <img src="../../assets/Imagens/chave.png" class="iconChaves2">
+        </div>
+        <div class="Texto-1">
+          <div class="P1">
+            <p class="txtChaves">{{ chaveAleatoria }}</p>
+          </div>
+
+          <div class="P2">
+            <p class="txtChaves">Chave Aleatória</p>
+          </div>
+        </div>
+
+        <div class="Texto-2">
+          <div class="P3" (click)="chaveAleatoria && shareText(chaveAleatoria)"><img src="../../assets/Imagens/compartilhar.png" class="iconChaves"></div>
+          <div class="P4" (click)="chaveAleatoria && copyText(chaveAleatoria)"><img src="../../assets/Imagens/copiarColar.png" class="iconChaves"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <p class="tituloPagarReceber2">Proteção Extra</p>
+    </div>
+
+    <div class="divChaves">
+      <div class="container">
+        <div class="Circulo">
+          <img src="../../assets/Imagens/ajustes.png" class="iconChaves2">
+        </div>
+        <div class="Texto-1">
+          <div class="P1">
+            <p class="txtChaves2">Limite Diário</p>
+          </div>
+
+          <div class="P2">
+          </div>
+        </div>
+
+        <div class="Texto-2">
+          <div class="P3"></div>
+          <div class="P4"><img src="../../assets/Imagens/arrowRight.png" class="iconChaves"></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="Circulo">
+          <img src="../../assets/Imagens/avatar.png" class="iconChaves2">
+        </div>
+        <div class="Texto-1">
+          <div class="P1">
+            <p class="txtChaves2" style="margin-bottom: -1rem;">Contatos de Segurança</p>
+          </div>
+
+          <div class="P2">
+          </div>
+        </div>
+
+        <div class="Texto-2">
+          <div class="P3"></div>
+          <div class="P4"><img src="../../assets/Imagens/arrowRight.png" class="iconChaves"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flexColumn">
+    <div class="buttonLargoBaixo">
+      <div class="flexRow historicoHeader">
+        <img src="../../assets/Imagens/ajuda.png" class="iconButtonBottom">
+        <p class="txtAjuda">Ajuda</p>
+        <img src="../../assets/Imagens/arrowRight.png" class="iconButtonBottom right">
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="footer">
+      <div class="flexRow">
+        <img src="../../assets/Imagens/Estácio Logo Banco.png" class="iconFooter">
+        <p class="txtFooter">Estácio Bank</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

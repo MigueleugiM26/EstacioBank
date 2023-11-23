@@ -1,0 +1,312 @@
+@import '../../indigoVariables.scss';
+
+*{
+    font-family:'Times New Roman', Times, serif;
+}
+
+.fundo {
+    background: $bg !important;
+    --background-color: $bg !important;
+    --background: $bf !important;
+}
+
+.header {
+    background: $primary;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+    height: 5rem;
+}
+
+.telaTitulo {
+    font-size: 3.5vh;
+    color: $fonte;
+    margin: 0;
+    margin-left: 2.25rem;
+    margin-top: 1.5rem;
+    white-space: nowrap;
+}
+
+.voltarDiv {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.60rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    justify-content: left;
+    align-items: center;
+}
+
+.voltarIcon {
+    width: 2rem;
+}
+
+.voltarTxt {
+    font-size: 2vh;
+    color: $fonte;
+    margin: 0;
+    margin-left: 0.5rem;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.div1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+    height: 5rem;
+    margin-left: 2rem;
+}
+
+.tituloPagarReceber {
+    color: $fonte;
+    font-size: 3vh;
+    margin-left: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+.tituloPagarReceber2 {
+    color: $fonte;
+    font-size: 2vh;
+    margin-left: 1rem;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+
+.divPagarReceber {
+    background: $primary;
+    border-radius: 360px;
+    
+    width: 4rem;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-left: 0rem;
+    margin-right: 1.5rem;
+}
+
+.divPagarReceber:hover {
+    background-color: #EEEEEE;
+    cursor: pointer;
+}
+
+.divPagarReceber:active {
+    background-color: #bababa;
+    cursor: pointer;
+}
+
+.iconPagarReceber {
+    width: 2rem;
+}
+
+.divChaves {
+    background: $primary;
+    border-radius: 25px;
+    width: 22rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 15rem;
+    padding: 0.5rem 0;
+}
+
+.txtPagarReceber {
+    color: $fonte;
+    font-size: 2vh;
+    text-align: center;
+    margin: 0;
+    margin-top: 0.5rem;
+    margin-left: -1.5rem;
+}
+
+.iconChaves {
+    width: 2rem;
+    margin-right: 0.5rem;
+}
+
+.iconChaves2 {
+    width: 2rem;
+}
+
+.txtChaves {
+    color: $fonte;
+    font-size: 1.5vh;
+    margin: 0;
+    margin-left: -1rem;
+}
+
+.txtChaves2 {
+    color: $fonte;
+    font-size: 2vh;
+    margin: 0;
+    margin-bottom: -0.5rem;
+    margin-left: -1rem;
+}
+
+.container {  display: grid;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Circulo Texto-1 Texto-2";
+  }
+  
+  .Circulo {
+    justify-self: center;
+    align-self: center;
+    grid-area: Circulo;
+    border: 2px black solid;
+    border-radius: 360px;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -1rem;
+  }
+  
+  .Texto-1 {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "P1"
+      "P2";
+    grid-area: Texto-1;
+    margin-left: -0.5rem;
+  }
+  
+  .P1 {
+    align-self: end;
+    grid-area: P1;
+  }
+  
+  .P2 {
+    align-self: flex-start;
+    grid-area: P2;
+  }
+  
+  .Texto-2 {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "P3 P4";
+    grid-area: Texto-2;
+  }
+  
+  .P3 {
+    justify-self: center;
+    align-self: center;
+    grid-area: P3;
+    margin-left: 1rem;
+  }
+  
+  .P4 {
+    justify-self: center;
+    align-self: center;
+    grid-area: P4;
+  }
+  
+  .buttonLargoBaixo {
+    width: 21rem;
+    height: 5.5rem;
+    background: $primary;
+    --background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 25px;
+    --border-radius: 25px;
+    color: $fonte;
+    font-size: 2vh;
+    padding: 0;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    max-height: 9rem;
+}
+
+.buttonLargoBaixo:hover {
+    background-color: #F5F5F5;
+    cursor: pointer;
+}
+
+.buttonLargoBaixo:active {
+    background-color: #bababa;
+    cursor: pointer;
+}
+
+.txtButton {
+    color: $fonte;
+    --font-size: 2vh;
+    margin-top: 0;
+    padding: 0;
+    user-select: none;
+}
+
+.historicoHeader{
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.right {
+    margin-left: 50%;
+    right: 0;
+}
+
+.txtAjuda {
+    font-size: 2vh;
+    color: $fonte;
+    margin-top: 1.6rem;
+    margin-left: 0.5rem;
+}
+
+.iconButtonBottom {
+    width: 2rem;
+    margin-top: 0.75rem;
+    user-select: none;
+    pointer-events: none;
+}
+
+.footer {
+    margin-top: 2rem;
+    width: 100%;
+    background: $primary !important;
+
+    bottom: 0;
+    position: absolute;
+}
+
+.iconFooter {
+    width: 3rem;
+    margin-right: 1rem;
+}
+
+.txtFooter {
+    font-size: 3vh;
+    color: white;
+}

@@ -1,0 +1,34 @@
+{
+  "indexes": 
+  [
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "nome",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "sobrenome",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "cpf",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "chaveAleatoria",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "dinheiro",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
+  ,
+  "fieldOverrides": []
+  
+}

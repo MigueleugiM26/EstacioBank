@@ -1,0 +1,245 @@
+<ion-content [fullscreen]="true" class="fundo">
+  <div class="header">
+    <div class="header">
+      <img (click)="navigateToSecret ()" src="../../assets/Imagens/olhoAberto.png" class="iconHeader">
+      <img (click)="navigateToPerguntasFrequentes ()" src="../../assets/Imagens/ajuda.png" class="iconHeader">
+      <img src="../../assets/Imagens/avatar.png" class="iconHeader">
+    </div>
+  </div>
+
+  <div class="flexColumn">
+    <swiper-container class="containerCard" id="swiper-1" [loop]="true" pagination="true">
+      <swiper-slide class="card">
+        <p class="statusTexto">Meu Saldo</p>
+
+        <div class="saldo flexColumn">
+          <div class="saldoTextoDiv">
+            <p class="saldoTexto">R${{ saldo }}</p>
+          </div>
+    
+          <div class="emprestimos flexRow">
+            <div class="flexColumnEmprestimo">
+              <div class="flexRowEmprestimo">
+                <img src="../../assets/Imagens/emprestimos.png" class="iconSaldo">
+                <p style="margin: 0;">Empréstimos</p>
+              </div>
+    
+              <p class="descEmprestimo">Saiba como conseguir uma linha de crédito para comprar parcelado sem cartão.</p>
+            </div>
+    
+            <div>
+              <img src="../../assets/Imagens/arrowRight.png" class="iconSaldo">
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+
+      <swiper-slide class="card">
+        <p class="statusTexto">Meu Cartão</p>
+
+        <div class="cartao flexColumn">
+          <div class="titCartaoFrente">
+            <p class="cartaoTitulo">ESTÁCIO BANK</p>
+            <img src="../../assets/Imagens/Estácio Logo Banco Branca.png" class="cartaoLogo">
+          </div>
+
+          <div class="sinalCartaoFrente">
+            <!--<p class="avisoCartao">Válido somente no Brasil</p>-->
+            <img src="../../assets/Imagens/chip.png" class="cartaoChip">
+            <img src="../../assets/Imagens/wifi.png" class="cartaoSinal">
+          </div>
+
+          <div class="rodapeCartaoFrente">
+            <p class="tipoCartao">Conta Corrente</p>
+            <img src="../../assets/Imagens/Visa-Logo.png" class="cartaoBandeira">
+          </div>
+        </div>
+      </swiper-slide>
+
+      <swiper-slide class="card">
+        <p class="statusTexto">Meu Cartão</p>
+
+        <div class="cartao flexColumn">
+          <div class="atendimentoCartao">
+            <p class="cartaoAtendimento">Atendimento: (xx) xxxxx-xxxx</p>
+          </div>
+
+          <div class="faixaCartao">
+
+          </div>
+
+          <div class="infoCartao1">
+            <div class="contaCartao">
+              <p class="txtContaCartao">{{ numeroCartao }}</p>
+              <p class="txtContaCartao">{{ nome }} {{ sobrenome }}</p>
+            </div>
+
+            <img src="../../assets/Imagens/qrCode.png" class="qrCartao">
+          </div>
+
+          <div class="rodapeCartaoFrente">
+            <div class="infoCartao2">
+              <p class="txtInfoCartao">Val: <span class="spanInfoCartao">{{ validade }}</span></p>
+              <p class="txtInfoCartao">Conta: <span class="spanInfoCartao">{{ conta }}</span></p>
+              <p class="txtInfoCartao">CVV: <span class="spanInfoCartao">{{ cvv }}</span></p>
+            </div>
+
+            <img src="../../assets/Imagens/Visa-Logo.png" class="cartaoBandeira">
+          </div>
+        </div>
+      </swiper-slide>
+
+      <div class="swiper-pagination">
+        
+      </div>
+    </swiper-container>
+  </div>
+
+  <div class="flexRow">
+    <div class="buttonLargo flexRow" (click) ='navigateToAreaPix ()'>
+      <img src="../../assets/Imagens/Estácio Logo Banco Branca.png" class="iconButtons">
+      <p class="txtButton fill">Área Pix</p>
+    </div>
+  </div>
+
+  <div class="flexRow">
+    <div class="buttonPequeno" (click) = 'navigateToTansferir ()'>
+      <img src="../../assets/Imagens/transferir.png" class="iconButtonsPequenos">
+      <p class="txtButton">Transferir</p>
+    </div>
+
+    <div class="buttonPequeno" (click) ='navigateToCobrar ()'>
+      <img src="../../assets/Imagens/cobrar.png" class="iconButtonsPequenos">
+      <p class="txtButton">Cobrar</p>
+    </div>
+  </div>
+
+  <div class="flexRow">
+    <div class="buttonPequeno" (click) ='navigateToDepositar ()'>
+      <img src="../../assets/Imagens/depositar.png" class="iconButtonsPequenos">
+      <p class="txtButton">Depositar</p>
+    </div>
+
+    <div class="buttonPequeno" (click) = 'navigateToInvestir ()'>
+      <img src="../../assets/Imagens/investir.png" class="iconButtonsPequenos">
+      <p class="txtButton">Investir</p>
+    </div>
+  </div>
+
+  <div class="flexRow">
+    <div class="buttonLargoBaixo flexColumn" (click) = 'navigateToPagar ()'>
+      <img img src="../../assets/Imagens/pagar.png" class="iconButtonBottom">
+      <p class="txtButton">Pagar</p>
+    </div>
+  </div>
+
+  <div class="flexColumn">
+    <div class="divHistorico" (click)="navigateToHistorico ()">
+      <div class="flexRow historicoHeader">
+        <img src="../../assets/Imagens/histórico.png" class="iconHistoricoHeader">
+        <p>Histórico</p>
+        <img src="../../assets/Imagens/arrowRight.png" class="iconHistoricoHeader right">
+      </div>
+
+      <section>
+        <div class="container">
+          <div class="flexRow divIconHistorico Circulo">
+            <img src="../../assets/Imagens/receber.png" class="iconHistorico">
+          </div>
+
+          <div class="flexHist1 Texto1">
+            <p class="historicoTexto P1">Pix</p>
+            <p class="historicoTexto P2">Murilo Silva Carvalho</p>
+          </div>
+
+          <div class="flexHist2 Texto2">
+            <p class="historicoReceber P3">+R$50,00</p>
+            <p class="historicoTexto P4">27/10</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="flexRow divIconHistorico Circulo">
+            <img src="../../assets/Imagens/enviar.png" class="iconHistorico">
+          </div>
+
+          <div class="flexHist1 Texto1">
+            <p class="historicoTexto P1">Pix</p>
+            <p class="historicoTexto P2">Marina Alves Cavalcanti</p>
+          </div>
+
+          <div class="flexHist2 Texto2">
+            <p class="historicoEnviar P3">-R$75,00</p>
+            <p class="historicoTexto P4">30/09</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="flexRow divIconHistorico Circulo">
+            <img src="../../assets/Imagens/enviar.png" class="iconHistorico">
+          </div>
+
+          <div class="flexHist1 Texto1">
+            <p class="historicoTexto P1">Reembolso</p>
+            <p class="historicoTexto P2">Gabriela Almeida Alves</p>
+          </div>
+
+          <div class="flexHist2 Texto2">
+            <p class="historicoEnviar P3">-R$15,00</p>
+            <p class="historicoTexto P4">15/09</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="flexRow divIconHistorico Circulo">
+            <img src="../../assets/Imagens/receber.png" class="iconHistorico">
+          </div>
+
+          <div class="flexHist1 Texto1">
+            <p class="historicoTexto P1">Transferência</p>
+            <p class="historicoTexto P2">Rafael Ribeiro Sousa</p>
+          </div>
+
+          <div class="flexHist2 Texto2">
+            <p class="historicoReceber P3">+R$1300,00</p>
+            <p class="historicoTexto P4">12/09</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="flexRow divIconHistorico Circulo">
+            <img src="../../assets/Imagens/receber.png" class="iconHistorico">
+          </div>
+
+          <div class="flexHist1 Texto1">
+            <p class="historicoTexto P1">Pix</p>
+            <p class="historicoTexto P2">Gabriela Almeida Alves</p>
+          </div>
+
+          <div class="flexHist2 Texto2">
+            <p class="historicoReceber P3">+R$15,00</p>
+            <p class="historicoTexto P4">11/09</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div>
+    <div class="footer">
+      <div class="flexRow">
+        <img src="../../assets/Imagens/Estácio Logo Banco Branca.png" class="iconFooter">
+        <p class="txtFooter">Estácio Bank</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

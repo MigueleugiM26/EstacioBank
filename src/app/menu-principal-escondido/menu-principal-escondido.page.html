@@ -1,0 +1,156 @@
+<ion-content [fullscreen]="true" class="fundo">
+  <div class="header">
+    <div class="header">
+      <img (click)="navigateToView ()" src="../../assets/Imagens/olhoFechado.png" class="iconHeader">
+      <img (click)="navigateToPerguntasFrequentes ()" src="../../assets/Imagens/ajuda.png" class="iconHeader">
+      <img src="../../assets/Imagens/avatar.png" class="iconHeader">
+    </div>
+  </div>
+
+  <div class="flexColumn">
+    <swiper-container class="containerCard" id="swiper-1" [loop]="true" pagination="true">
+      <swiper-slide class="card">
+        <p class="statusTexto">Meu Saldo</p>
+
+        <div class="saldo flexColumn">
+          <div class="saldoTextoDiv">
+            <p class="saldoTexto">R$**</p>
+          </div>
+    
+          <div class="emprestimos flexRow">
+            <div class="flexColumnEmprestimo">
+              <div class="flexRowEmprestimo">
+                <img src="../../assets/Imagens/emprestimos.png" class="iconSaldo">
+                <p style="margin: 0;">Empréstimos</p>
+              </div>
+    
+              <p class="descEmprestimo">Saiba como conseguir uma linha de crédito para comprar parcelado sem cartão.</p>
+            </div>
+    
+            <div>
+              <img src="../../assets/Imagens/arrowRight.png" class="iconSaldo">
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+
+      <swiper-slide class="card">
+        <p class="statusTexto">Meu Cartão</p>
+
+        <div class="cartao flexColumn">
+          <div class="titCartaoFrente">
+            <p class="cartaoTitulo">ESTÁCIO BANK</p>
+            <img src="../../assets/Imagens/Estácio Logo Banco Branca.png" class="cartaoLogo">
+          </div>
+
+          <div class="sinalCartaoFrente">
+            <!--<p class="avisoCartao">Válido somente no Brasil</p>-->
+            <img src="../../assets/Imagens/chip.png" class="cartaoChip">
+            <img src="../../assets/Imagens/wifi.png" class="cartaoSinal">
+          </div>
+
+          <div class="rodapeCartaoFrente">
+            <p class="tipoCartao">Conta Corrente</p>
+            <img src="../../assets/Imagens/Visa-Logo.png" class="cartaoBandeira">
+          </div>
+        </div>
+      </swiper-slide>
+
+      <swiper-slide class="card">
+        <p class="statusTexto">Meu Cartão</p>
+
+        <div class="cartao flexColumn">
+          <div class="atendimentoCartao">
+            <p class="cartaoAtendimento">Atendimento: (xx) xxxxx-xxxx</p>
+          </div>
+
+          <div class="faixaCartao">
+
+          </div>
+
+          <div class="infoCartao1">
+            <div class="contaCartao">
+              <p class="txtContaCartao">**** **** **** ****</p>
+              <p class="txtContaCartao">{{ nome }} {{ sobrenome }}</p>
+            </div>
+
+            <div class="qrCartao"></div>
+          </div>
+
+          <div class="rodapeCartaoFrente">
+            <div class="infoCartao2">
+              <p class="txtInfoCartao">Val: <span class="spanInfoCartao">**/**/****</span></p>
+              <p class="txtInfoCartao">Conta: <span class="spanInfoCartao">**** ************-*</span></p>
+              <p class="txtInfoCartao">CVV: <span class="spanInfoCartao">***</span></p>
+            </div>
+
+            <img src="../../assets/Imagens/Visa-Logo.png" class="cartaoBandeira">
+          </div>
+        </div>
+      </swiper-slide>
+
+      <div class="swiper-pagination">
+        
+      </div>
+    </swiper-container>
+  </div>
+
+  <div class="flexRow">
+    <div class="buttonLargo flexRow" (click) ='navigateToFuncionalidadesEscondidas ()'>
+      <img src="../../assets/Imagens/Estácio Logo Banco Branca.png" class="iconButtons">
+      <p class="txtButton fill">Área Pix</p>
+    </div>
+  </div>
+
+  <div class="flexRow">
+    <div class="buttonPequeno" (click) = 'navigateToFuncionalidadesEscondidas ()'>
+      <img src="../../assets/Imagens/transferir.png" class="iconButtonsPequenos">
+      <p class="txtButton">Transferir</p>
+    </div>
+
+    <div class="buttonPequeno" (click) ='navigateToFuncionalidadesEscondidas ()'>
+      <img src="../../assets/Imagens/cobrar.png" class="iconButtonsPequenos">
+      <p class="txtButton">Cobrar</p>
+    </div>
+  </div>
+
+  <div class="flexRow">
+    <div class="buttonPequeno" (click) ='navigateToFuncionalidadesEscondidas ()'>
+      <img src="../../assets/Imagens/depositar.png" class="iconButtonsPequenos">
+      <p class="txtButton">Depositar</p>
+    </div>
+
+    <div class="buttonPequeno" (click) = 'navigateToFuncionalidadesEscondidas ()'>
+      <img src="../../assets/Imagens/investir.png" class="iconButtonsPequenos">
+      <p class="txtButton">Investir</p>
+    </div>
+  </div>
+
+  <div class="flexRow">
+    <div class="buttonLargoBaixo flexColumn" (click) = 'navigateToFuncionalidadesEscondidas ()'>
+      <img img src="../../assets/Imagens/pagar.png" class="iconButtonBottom">
+      <p class="txtButton">Pagar</p>
+    </div>
+  </div>
+
+  <div class="flexColumn">
+    <div class="divHistorico" (click)="navigateToHistoricoEscondido ()">
+      <div class="flexRow historicoHeader">
+        <img src="../../assets/Imagens/histórico.png" class="iconHistoricoHeader">
+        <p>Histórico</p>
+        <img src="../../assets/Imagens/arrowRight.png" class="iconHistoricoHeader right">
+      </div>
+
+      <p class="tituloPagarReceber2">As informações estão escondidas.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="footer">
+      <div class="flexRow">
+        <img src="../../assets/Imagens/Estácio Logo Banco Branca.png" class="iconFooter">
+        <p class="txtFooter">Estácio Bank</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

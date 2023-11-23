@@ -1,0 +1,103 @@
+<ion-content [fullscreen]="true" class="fundo">
+  <div>
+    <div class="voltarDiv" (click) = 'goBack()'>
+      <img src="../../assets/Imagens/arrowLeft.png" class="voltarIcon">
+      <p class="voltarTxt">Voltar</p>
+    </div>
+  </div>
+
+  <div class="flexColumn">
+    <ion-accordion-group class="perguntasAccordion" [multiple]="true" expand="inset">
+      <ion-accordion value="1">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para fazer depósitos na minha conta no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Você pode fazer depósitos na sua conta do Estácio Bank de várias maneiras, incluindo transferências eletrônicas, depósitos em dinheiro em caixas eletrônicos parceiros e depósitos por cheque.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="2">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como posso verificar meu saldo no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Para verificar seu saldo, faça login no aplicativo do Estácio Bank e seu saldo estará disponível na Página Inicial, onde você poderá visualizar as informações atualizadas.</ion-label>
+        </div>
+      </ion-accordion>
+      
+      <ion-accordion value="3">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Quais serviços de pagamento o Estácio Bank oferece?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">O Estácio Bank oferece uma variedade de serviços de pagamento, incluindo pagamento de contas, transferências entre contas e pagamentos de serviços públicos.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="4">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">O Estácio Bank oferece empréstimos ou serviços de investimento?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Sim, o Estácio Bank oferece serviços de empréstimo e investimento para atender às suas necessidades financeiras. Entre em contato com um de nossos representantes para obter mais informações.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="5">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para entrar em contato com o suporte ao cliente do Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Para entrar em contato com nosso suporte ao cliente, ligue para o número de atendimento ao cliente disponível em nosso aplicativo ou site. Nossos representantes estão disponíveis 24 horas por dia, 7 dias por semana.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="6">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">O aplicativo do Estácio Bank é seguro?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Sim, a segurança dos seus dados é uma prioridade no Estácio Bank. Implementamos medidas de segurança avançadas, como autenticação em duas etapas e criptografia de dados, para proteger suas informações.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="7">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como faço para alterar minha senha no Estácio Bank?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Para alterar sua senha, acesse sua conta no aplicativo e vá para as configurações de segurança, onde você encontrará a opção de redefinir sua senha.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="8">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">O Estácio Bank oferece cartões de crédito?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Sim, o Estácio Bank oferece cartões de crédito com uma variedade de benefícios e recompensas. Você pode solicitar um cartão de crédito diretamente no aplicativo.</ion-label>
+        </div>
+      </ion-accordion>
+
+      <ion-accordion value="9">
+        <ion-item slot="header" color="branco" class="accordionHeader">
+          <ion-label class="ion-text-wrap">Como posso acessar minha conta em dispositivos diferentes?</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content" color="light" class="accordionContent">
+          <ion-label class="ion-text-wrap">Você pode acessar sua conta no Estácio Bank em dispositivos diferentes usando suas credenciais de login. Certifique-se de fazer o logout em dispositivos públicos para manter sua conta segura.</ion-label>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </div>
+
+  <div>
+    <div class="footer">
+      <div class="flexRow">
+        <img src="../../assets/Imagens/Estácio Logo Banco.png" class="iconFooter">
+        <p class="txtFooter">Estácio Bank</p>
+      </div>
+    </div>
+  </div>
+  
+</ion-content>

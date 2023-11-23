@@ -1,0 +1,29 @@
+<ion-header [translucent]="true" class="titleHeader">
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"></script>
+
+  <script>document.documentElement.style.setProperty('--original-viewport-height', window.innerHeight+"px")</script>
+  <img src="../../assets/Imagens/Estácio Logo Banco.png" class="logo">
+  <ion-title class="titleTxt">Estácio Bank</ion-title>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-card class="fundoLogin">
+      <div class="transparent div1">
+        <form [formGroup]="registrationForm" class="transparent flexColumn">
+          <input formControlName="nome" class="loginTxtBox" placeholder="Nome" required>
+          <input formControlName="sobrenome" class="loginTxtBox" placeholder="Sobrenome" required>
+          <input formControlName="cpf" class="loginTxtBox" placeholder="CPF" required>
+          <input formControlName="email" class="loginTxtBox" placeholder="Email" required>
+          <input formControlName="password" class="loginTxtBox" type="password" placeholder="Senha" required>
+          <input formControlName="confirmPassword" class="loginTxtBox" type="password" placeholder="Confirmar Senha" required>
+          <button type="button" (click)="register()" class="loginButton">Criar Conta</button>
+
+          <div class="criarContaDiv" (click)="navigateToLogin()">
+            <p class="contaTxt1">Já tem uma conta?</p>
+            <p class="contaTxt2">Entrar</p>
+          </div>
+        </form>           
+      </div>
+    </ion-card>
+</ion-content>

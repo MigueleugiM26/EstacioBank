@@ -1,0 +1,566 @@
+@import '../../indigoVariables.scss';
+
+*{
+    font-family:'Times New Roman', Times, serif;
+}
+
+.fundo {
+    background: $bg !important;
+    background: $bg;
+    --background: $bg !important;
+    --background: $bg !important;
+}
+
+.header {
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: right;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.iconHeader {
+    width: 2rem;
+    cursor: pointer;
+}
+
+.statusTexto {
+    font-size: 4vh;
+    margin-top: -4rem; 
+    margin-bottom: 0.5rem;
+    color: $fonte;
+
+}
+
+.containerCard {
+    width: 100%;
+    height: 22rem;
+    min-height: 14rem;
+    margin-bottom: -2.5rem;
+    margin-top: -2rem;
+    z-index: 0;
+    --swiper-pagination-color: hsl(223, 30%, 55%);
+    --swiper-pagination-bullet-size: 0.75rem;
+    --swiper-pagination-bullet-width: 0.75rem;
+    --swiper-pagination-bullet-height: 0.75rem;
+    --swiper-pagination-bullet-inactive-color: hsl(223, 30%, 55%);
+    --swiper-pagination-bullet-inactive-opacity: 0.2;
+    --swiper-pagination-bullet-opacity: 1;
+    --swiper-pagination-bullet-horizontal-gap: 0.25rem;
+    --swiper-pagination-bullet-vertical-gap: 0px;
+    --swiper-pagination-bullet-margin-top: -1rem;
+    padding-bottom: 3rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 22rem;
+    margin-bottom: 0rem;
+    min-height: 14rem;
+}
+
+.saldo {
+    color: $fonte;
+    font-size: 2vh;
+    width: 21rem;
+    height: 14rem;
+    background: $primary;
+    
+    border-radius: 25px;
+    margin-bottom: 2rem;
+}
+
+.saldoTextoDiv {
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    margin-left: 4rem;
+    width: 100%;
+}
+
+.saldoTexto {
+    font-size: 4vh;
+    margin: 0;
+    margin-bottom: 3rem;
+    margin-left: 0rem;
+}
+
+.emprestimos {
+    color: $fonte;
+    font-size: 1vh;
+    width: 18rem;
+    height: 5rem;
+    padding-top: 0;
+    background: $bg;
+    
+    border-radius: 15px;
+}
+
+.flexColumnEmprestimo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    gap: 0;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.flexRowEmprestimo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.25rem;
+    font-size: 3vh;
+}
+
+.descEmprestimo {
+    font-size: 1.5vh;
+    margin: 0;
+    margin-top: 0.25rem;
+}
+
+.emprestimos:hover {
+    cursor: pointer;
+    background: $hover;
+}
+
+.emprestimos:active {
+    background: $click;
+}
+
+.iconSaldo {
+    width: 2rem;
+}
+
+.iconButtons {
+    width: 3rem;
+    margin-right: 1rem;
+    user-select: none;
+    pointer-events: none;
+}
+
+.iconButtonsPequenos {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 5rem;
+    user-select: none;
+    pointer-events: none;
+}
+
+.iconButtonBottom {
+    width: 3rem;
+    margin-top: 0.75rem;
+    user-select: none;
+    pointer-events: none;
+}
+
+.buttonLargo {
+    width: 21rem;
+    height: 4rem;
+    background: $primary;
+    --background: #FFFFFF;
+    
+    border-radius: 25px;
+    --border-radius: 25px;
+    color: $fonte;
+    font-size: 2vh;
+    padding: 0;
+    margin-top: 1rem;
+    max-height: 9rem;
+    z-index: 1;
+}
+
+.buttonLargoBaixo {
+    width: 21rem;
+    height: 5rem;
+    background: $primary;
+    --background: #FFFFFF;
+    
+    border-radius: 25px;
+    --border-radius: 25px;
+    color: $fonte;
+    font-size: 2vh;
+    padding: 0;
+    margin-top: 1rem;
+    max-height: 9rem;
+}
+
+.buttonPequeno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 10rem;
+    height: 10rem;
+    background: $primary;
+    
+    border-radius: 25px;
+    color: $fonte;
+    font-size: 2vh;
+
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.buttonLargo:hover, .buttonLargoBaixo:hover, .buttonPequeno:hover {
+    background: $hover;
+    cursor: pointer;
+}
+
+.buttonLargo:active, .buttonLargoBaixo:active, .buttonPequeno:active {
+    background: $click;
+    cursor: pointer;
+}
+
+.txtButton {
+    color: $fonte;
+    --font-size: 2vh;
+    margin-top: 0;
+    padding: 0;
+    user-select: none;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fill {
+    margin-top: 3.5rem;
+    height: 100%;
+    min-height: 100%;
+}
+
+.divHistorico {
+    width: 21rem;
+    background: $primary;
+    --background: #FFFFFF;
+    
+    border-radius: 25px;
+    --border-radius: 25px;
+    color: $fonte;
+    font-size: 2vh;
+    margin-top: 1rem;
+}
+
+.divHistorico:hover, .divHistorico:hover {
+    background: $hover;
+    cursor: pointer;
+}
+
+.divHistorico:active, .divHistorico:active {
+    background: $click;
+    cursor: pointer;
+}
+
+.iconHistorico {
+    width: 1.5rem;
+   margin: 0;
+}
+
+.historicoHeader{
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.iconHistoricoHeader {
+    width: 2rem;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.historicoTexto {
+    color: $fonte;
+}
+
+.historicoReceber {
+    color: #dbffce;
+}
+
+.historicoEnviar {
+    color: #ffb4b4;
+}
+
+.container {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "Circulo Texto1 Texto2"; 
+    margin-left: -1.5rem;
+    margin-bottom: 1rem;
+  }
+  .Circulo {
+    justify-self: center; 
+    align-self: center; 
+    grid-area: Circulo; 
+  }
+  .Texto1 {
+    margin: -1.75rem;
+ 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1.1fr 1.2fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "P1"
+      "P2"; 
+    justify-self: flex-start; 
+    align-self: center; 
+    grid-area: Texto1; 
+  }
+  .P1 { 
+    grid-area: P1; 
+    margin-bottom: -1rem;
+
+    }
+  .P2 { 
+    grid-area: P2;
+
+    }
+  .Texto2 {
+    margin-right: 1.5rem;
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "P3"
+      "P4"; 
+    justify-self: flex-end; 
+    align-self: center; 
+    grid-area: Texto2; 
+  }
+  .P3 { grid-area: P3; margin-bottom: -0.5rem; }
+  .P4 { grid-area: P4;}
+
+.divIconHistorico {
+    background: $secondary;
+    border-radius: 360px;
+    width: 3rem;
+    height: 3rem;
+}
+
+.flexHist1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    font-size: 2vh;
+}
+
+.flexHist2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: right;
+    font-size: 1.5vh;
+}
+
+.right {
+    margin-left: 50%;
+    right: 0;
+}
+
+.footer {
+    margin-top: 2rem;
+    width: 100%;
+    background: $primary !important;
+
+    bottom: 0;
+}
+
+.iconFooter {
+    width: 3rem;
+    margin-right: 1rem;
+}
+
+.txtFooter {
+    font-size: 3vh;
+    color: white;
+}
+
+
+.cartao {
+    color: $fonte;
+    font-size: 2vh;
+    width: 21rem;
+    height: 14rem;
+    background: $cartao;
+    
+    border-radius: 25px;
+    margin-bottom: 2rem;
+}
+
+.titCartaoFrente {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.cartaoTitulo {
+    color: $fonte;
+    font-size: 4vh;
+    white-space: nowrap;
+    margin-top: 0rem;
+}
+
+.cartaoLogo {
+    width: 4rem;
+    margin-left: 1rem;
+    margin-top: -1rem;
+}
+
+.sinalCartaoFrente{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: left;
+    width: 100%;
+}
+
+.avisoCartao {
+    color: #FFFFFF;
+    font-size: calc(0.25vh);
+    
+    transform: rotate(-90deg);
+}
+
+.cartaoChip {
+    width: 3rem;
+    margin-left: 2rem;
+}
+
+.cartaoSinal {
+    width: 2rem;
+    transform: rotate(90deg);
+}
+
+.rodapeCartaoFrente {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: left;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.tipoCartao {
+    color: #FFFFFF;
+    font-size: 2vh;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.cartaoBandeira {
+    width: 5rem;
+    margin-top: 0;
+    margin-left: 6rem;
+}
+
+.atendimentoCartao {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: left;
+    width: 100%;
+}
+
+.cartaoAtendimento{
+    color: #FFFFFF;
+    font-size: 0.25vh;
+    margin-left: 1rem;
+}
+
+.faixaCartao {
+    width: 100%;
+    height: 2.5rem;
+    background: black;
+}
+
+.infoCartao1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: left;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.contaCartao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    width: 76%;
+    max-width: 76%;
+}
+
+.txtContaCartao {
+    color: #FFFFFF;
+    font-size: 2vh;
+    margin: 0;
+    margin-left: 1rem;
+}
+
+.qrCartao {
+    background: #7b7b7b;
+    width: 3rem;
+    height: 3rem;
+    margin-left: 0rem;
+    padding: 0.25rem;
+}
+
+.infoCartao2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    width: 8rem;
+}
+
+.txtInfoCartao {
+    color: #FFFFFF;
+    font-size: 0.5vh;
+    margin: 0;
+    margin-left: 1rem;
+    white-space: nowrap;
+}
+
+.spanInfoCartao {
+    font-size: 1.5vh;
+}
+
+.tituloPagarReceber2 {
+    color: $fonte;
+    font-size: 2vh;
+    margin-left: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 2rem;
+}
