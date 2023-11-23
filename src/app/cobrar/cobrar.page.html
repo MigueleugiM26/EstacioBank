@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true" class="fundo">
   <div class="header">
-    <div class="voltarDiv" (click) = 'navigateToMenuPrincipal ()'>
+    <div class="voltarDiv" (click) = 'goBack()'>
       <img src="../../assets/Imagens/arrowLeft.png" class="voltarIcon">
       <p class="voltarTxt">Voltar</p>
     </div>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="flexColumn">
-          <div class="divPagarReceber">
+          <div class="divPagarReceber" (click)="navigateToLink()">
             <img src="../../assets/Imagens/link.png" class="iconPagarReceber">
           </div>
           <p class="txtPagarReceber">Link</p>

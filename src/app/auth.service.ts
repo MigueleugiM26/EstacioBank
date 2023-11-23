@@ -15,6 +15,17 @@ export class AuthService {
   private firestore = getFirestore(); 
   private usersCollectionRef = collection(this.firestore, 'users');
 
+  private nome: string | undefined;
+  private sobrenome: string | undefined;
+  private cpf: string | undefined;
+  private email: string | undefined;
+  private chaveAleatoria: string | undefined;
+  private numCartao: string | undefined;
+  private conta: string | undefined;
+  private cvv: string | undefined;
+  private validade: string | undefined;
+  private dinheiro: number | undefined;
+
   register(nome: string, sobrenome: string, cpf: string, email: string, password: string): Promise<void> {
     return createUserWithEmailAndPassword(this.auth, email, password)
       .then(async (userCredential: UserCredential) => {
@@ -194,6 +205,7 @@ export class AuthService {
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const saldo = userData?.['dinheiro'] || null;
+      this.dinheiro = saldo;
       return saldo;
     } else {
       return null;
@@ -207,6 +219,7 @@ export class AuthService {
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const nome = userData?.['nome'] || null;
+      this.nome = nome;
       return nome;
     } else {
       return null;
@@ -220,6 +233,7 @@ export class AuthService {
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const sobrenome = userData?.['sobrenome'] || null;
+      this.sobrenome = sobrenome;
       return sobrenome;
     } else {
       return null;
@@ -233,6 +247,7 @@ export class AuthService {
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const numCartao = userData?.['numeroCartao'] || null;
+      this.numCartao = numCartao;
       return numCartao;
     } else {
       return null;
@@ -246,6 +261,7 @@ export class AuthService {
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const validade = userData?.['validade'] || null;
+      this.validade = validade;
       return validade;
     } else {
       return null;
@@ -259,6 +275,7 @@ export class AuthService {
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const conta = userData?.['conta'] || null;
+      this.conta = conta;
       return conta;
     } else {
       return null;
@@ -272,6 +289,7 @@ export class AuthService {
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const cvv = userData?.['cvv'] || null;
+      this.cvv = cvv;
       return cvv;
     } else {
       return null;
@@ -286,7 +304,21 @@ export class AuthService {
       const userData = userDocSnap.data();
       const cpf = userData?.['cpf'] || null;
       const formattedCPF = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+      this.cpf = formattedCPF;
       return formattedCPF;
+    } else {
+      return null;
+    }
+  }
+
+  async getRawCPF () {
+    const userDocRef = doc(this.firestore, 'users', currentUser);
+    const userDocSnap = await getDoc(userDocRef);
+     
+    if (userDocSnap.exists()) {
+      const userData = userDocSnap.data();
+      const cpf = userData?.['cpf'] || null;
+      return cpf;
     } else {
       return null;
     }
@@ -299,10 +331,23 @@ export class AuthService {
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const chaveAleatoria = userData?.['chaveAleatoria'] || null;
+      this.chaveAleatoria = chaveAleatoria;
       return chaveAleatoria;
     } else {
       return null;
     }
+  }
+
+  update (){
+    this.getSaldo();
+    this.getNome;
+    this.getSobrenome;
+    this.getCPF;
+    this.getNumCartao;
+    this.getValidade;
+    this.getConta;
+    this.getChaveAleatoria;
+    this.getCVV;
   }
 
   getCurrentUser () {

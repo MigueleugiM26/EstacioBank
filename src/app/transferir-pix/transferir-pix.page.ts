@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TransferService } from '../transfer.service';
 
-
 @Component({
   selector: 'app-transferir-pix',
   templateUrl: './transferir-pix.page.html',

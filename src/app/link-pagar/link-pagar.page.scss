@@ -188,7 +188,6 @@
     justify-content: center;
     align-items: center;
     margin-left: -1rem;
-    border: 1px white solid;
   }
   
   .Texto-1 {  display: grid;
@@ -326,4 +325,47 @@
 .txtFooter {
     font-size: 3vh;
     color: white;
+}
+
+.loginTxtBox {
+    background-color: $secondary;
+    color: $fonte;
+    margin-bottom: 1rem;
+    width: 12rem;
+    height: 3rem;
+    font-size: 1.75vh;
+    padding-left: 1.5rem !important;
+    border-bottom: 2px solid transparent;
+    border-radius: 75px;
+    text-decoration: none;
+}
+
+.has-focus {
+    border: 2px solid #144BC8 !important;
+}
+
+.loginButton {
+    background: $primary;
+    color: $fonte;
+    width: 15rem;
+    height: 4rem;
+    font-size: 3vh;
+    border-radius: 75px !important;
+    margin-top: 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginButton:hover {
+    background: $hover;
+    cursor: pointer;
+}
+.loginButton:active {
+    background: $click;
+    cursor: pointer;
+}
+
+.form {
+    margin-top: 15rem;
+    margin-bottom: 20rem;
 }

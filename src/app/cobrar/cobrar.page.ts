@@ -25,10 +25,18 @@ export class CobrarPage {
     this.router.navigate(['perguntas-frequentes-cobrar']);
   }  
 
+  goBack() {
+    window.history.back();
+  }
+
   copyText(txt: string): void {
     if (txt){
       this.clipboardService.copyToClipboard(txt);
     }
+  }
+
+  navigateToLink() {
+    this.router.navigate(['link-cobrar']);
   }
 
   async shareText(txt: string) {

@@ -29,6 +29,11 @@ import { AlertController } from '@ionic/angular';
         if (currentUserDocSnap.exists()) {
           const currentUserData = currentUserDocSnap.data();
           const currentUserDinheiro = Number(currentUserData?.['dinheiro']) || 0;
+
+          if (isNaN(numericAmount)) {
+            alert('Valor inválido.');
+            return;
+          }
   
           if (currentUserDinheiro < numericAmount) {
             alert("Dinheiro insuficiente.");

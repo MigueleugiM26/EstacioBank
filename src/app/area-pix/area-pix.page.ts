@@ -40,6 +40,14 @@ export class AreaPixPage {
     this.router.navigate(['transferir-pix']);
   }  
 
+  navigateToCopiaCola() {
+    this.router.navigate(['copia-cola-pix']);
+  }  
+
+  navigateToCobrar() {
+    this.router.navigate(['cobrar']);
+  }  
+
   copyText(txt: string): void {
     if (txt){
       this.clipboardService.copyToClipboard(txt);

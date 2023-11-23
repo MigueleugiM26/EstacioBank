@@ -25,6 +25,10 @@ export class PagarPage {
     this.router.navigate(['perguntas-frequentes-pagar']);
   }  
 
+  navigateToLinkPagar() {
+    this.router.navigate(['link-pagar']);
+  }  
+
   copyText(txt: string): void {
     if (txt){
       this.clipboardService.copyToClipboard(txt);

@@ -91,6 +91,18 @@ const routes: Routes = [
     path: 'transferir-pix',
     loadChildren: () => import('./transferir-pix/transferir-pix.module').then( m => m.TransferirPixPageModule)
   },
+  {
+    path: 'copia-cola-pix',
+    loadChildren: () => import('./copia-cola-pix/copia-cola-pix.module').then( m => m.CopiaColaPixPageModule)
+  },
+  {
+    path: 'link-cobrar',
+    loadChildren: () => import('./link-cobrar/link-cobrar.module').then( m => m.LinkCobrarPageModule)
+  },
+  {
+    path: 'link-pagar',
+    loadChildren: () => import('./link-pagar/link-pagar.module').then( m => m.LinkPagarPageModule)
+  },
 ];
 
 @NgModule({

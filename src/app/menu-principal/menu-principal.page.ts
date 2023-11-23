@@ -37,6 +37,16 @@ export class MenuPrincipalPage {
     this.getCVV();
   }
 
+  ionViewWillEnter() {
+    this.getSaldo();
+    this.getNome();
+    this.getSobrenome();
+    this.getNumCartao();
+    this.getValidade();
+    this.getConta();
+    this.getCVV();
+  }
+
   navigateToLogin() {
     this.router.navigate(['login']);
   }  
@@ -117,6 +127,17 @@ export class MenuPrincipalPage {
     this.authService.getCVV().then((cvv) => {
       this.cvv = cvv;
     });
+  }
+
+  async update() {
+    await Promise.all([
+      this.getNome(),
+      this.getSobrenome(),
+      this.getNumCartao(),
+      this.getValidade(),
+      this.getConta(),
+      this.getCVV(),
+    ]);
   }
 }
 
