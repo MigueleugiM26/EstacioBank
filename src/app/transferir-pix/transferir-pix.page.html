@@ -1,9 +1,27 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="fundo">
+  <div class="header">
+    <div class="voltarDiv" (click) = 'goBack()'>
+      <img src="../../assets/Imagens/arrowLeft.png" class="voltarIcon">
+      <p class="voltarTxt">Voltar</p>
+    </div>
 
-      <form [formGroup]="transferirForm" class="transparent flexColumn">
-        <input formControlName="destinatario" class="loginTxtBox" placeholder="Destinatario">
-        <input formControlName="quantia" class="loginTxtBox" placeholder="Quantia">
-        <button type="button" (click)="transferir()" class="loginButton">Transferir</button>
-      </form> 
+    <div>
+      <p class="telaTitulo">Transferir (Pix)</p>
+    </div>
+  </div>
 
+  <form [formGroup]="transferirForm" class="transparent flexColumn form">
+    <input formControlName="destinatario" class="loginTxtBox" placeholder="CPF ou Chave Aleatória">
+    <input formControlName="quantia" class="loginTxtBox" placeholder="Quantia">
+    <button type="button" (click)="transferir()" class="loginButton">Transferir</button>
+  </form> 
+
+  <div>
+    <div class="footer">
+      <div class="flexRow">
+        <img src="../../assets/Imagens/Estácio Logo Banco.png" class="iconFooter">
+        <p class="txtFooter">Estácio Bank</p>
+      </div>
+    </div>
+  </div>
 </ion-content>

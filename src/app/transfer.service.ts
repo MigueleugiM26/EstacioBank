@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { getFirestore, doc, getDoc, updateDoc, query, where, getDocs, collection } from 'firebase/firestore';
 import { AuthService } from './auth.service';
+import { AlertController } from '@ionic/angular';
 
 @Injectable({
     providedIn: 'root',
@@ -9,14 +10,17 @@ import { AuthService } from './auth.service';
     private firestore = getFirestore();
     private usersCollectionRef = collection(this.firestore, 'users');
   
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService, private alertController: AlertController) {}
   
-    async transferMoney(recipient: string, amount: number): Promise<void> {
+    async transferMoney(recipient: string, amount: string): Promise<void> {
       const currentUserEmail = this.authService.getCurrentUser();
   
       if (!currentUserEmail) {
         return;
       }
+
+      const normalizedAmount = amount.replace(/\./g, '').replace(',', '.');
+      const numericAmount = parseFloat(normalizedAmount);
   
       try {
         const currentUserDocRef = doc(this.firestore, 'users', currentUserEmail);
@@ -24,45 +28,58 @@ import { AuthService } from './auth.service';
   
         if (currentUserDocSnap.exists()) {
           const currentUserData = currentUserDocSnap.data();
-  
-          // Convert dinheiro to number
           const currentUserDinheiro = Number(currentUserData?.['dinheiro']) || 0;
   
-          if (currentUserDinheiro < amount) {
+          if (currentUserDinheiro < numericAmount) {
             alert("Dinheiro insuficiente.");
             return;
           }
   
-
-  
-          // Check recipient by CPF
           let recipientQueryField = 'cpf';
           let recipientDocs = await getDocs(query(this.usersCollectionRef, where(recipientQueryField, '==', recipient)));
-  
-          // If recipient not found, try searching by chaveAleatoria
+
           if (recipientDocs.empty) {
             recipientQueryField = 'chaveAleatoria';
             recipientDocs = await getDocs(query(this.usersCollectionRef, where(recipientQueryField, '==', recipient)));
           }
   
           if (!recipientDocs.empty) {
-            const recipientDocRef = recipientDocs.docs[0].ref;
+            if (
+              recipient === currentUserEmail ||
+              recipient === currentUserData?.['cpf'] ||
+              recipient === currentUserData?.['chaveAleatoria']
+            ) {
+              alert("Você não pode transferir dinheiro para você mesmo.");
+              return;
+            }
+
+            const recipientData = recipientDocs.docs[0].data();
+            const destinatario = `${recipientData['nome']} ${recipientData['sobrenome']}`;
+            const cpf = recipientData['cpf'];
+            const chaveAleatoria = recipientData['chaveAleatoria'];
+            const quantia = numericAmount;
+            const isConfirmed = await this.presentConfirmationAlert(quantia, destinatario, cpf, chaveAleatoria);
+
+            if (isConfirmed) {
+              const recipientDocRef = recipientDocs.docs[0].ref;
+
+              const recipientDinheiro = Number(recipientDocs.docs[0].data()['dinheiro']) || 0;
   
-            // Convert dinheiro to number
-            const recipientDinheiro = Number(recipientDocs.docs[0].data()['dinheiro']) || 0;
-  
-            // Add the amount as a number and keep dinheiro as a number
-            await updateDoc(currentUserDocRef, {
-                dinheiro: currentUserDinheiro - amount, // Keep dinheiro as a number
-              });
-              
-            await updateDoc(recipientDocRef, {
-                dinheiro: Number(recipientDinheiro) + Number(amount), // Explicitly cast to numbers
-              });
-  
-            alert("Transferência bem sucedida");
+              await updateDoc(currentUserDocRef, {
+                  dinheiro: currentUserDinheiro - numericAmount,
+                });
+                
+              await updateDoc(recipientDocRef, {
+                  dinheiro: Number(recipientDinheiro) + Number(numericAmount),
+                });
+    
+              alert("Transferência bem sucedida");
+            }
+            else {
+              alert("A transferência não foi realizada.")
+            }            
           } else {
-            alert("Ocorreu um erro ao realizar a transferência");
+            alert("Destinatário não encontrado");
           }
         } else {
           alert("Destinatário não encontrado");
@@ -71,4 +88,38 @@ import { AuthService } from './auth.service';
         alert("Erro ao realizar a transferência: " + error);
       }
     }
+
+    async presentConfirmationAlert(quantia: number, destinatario: string, cpf: string, chaveAleatoria: string): Promise<boolean> {
+      return new Promise<boolean>(async (resolve) => {
+        const formattedCPF = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+
+        const alert = await this.alertController.create({
+          header: 'Confirmação',
+          message: `
+            Você vai transferir R$${quantia} para ${destinatario}.
+            CPF: ${formattedCPF}.
+            Chave Aleatória: ${chaveAleatoria}.
+            Confirmar?
+          `,
+          buttons: [
+            {
+              text: 'Não',
+              role: 'cancel',
+              handler: () => {
+                resolve(false);
+              },
+            },
+            {
+              text: 'Sim',
+              handler: () => {
+                resolve(true);
+              },
+            },
+          ],
+        });
+    
+        await alert.present();
+      });
+    }
+    
   }
