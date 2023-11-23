@@ -29,6 +29,10 @@ export class PagarPage {
     this.router.navigate(['link-pagar']);
   }  
 
+  navigateToQrPagar() {
+    this.router.navigate(['qr-pagar']);
+  }
+
   copyText(txt: string): void {
     if (txt){
       this.clipboardService.copyToClipboard(txt);

@@ -25,6 +25,10 @@ export class CobrarPage {
     this.router.navigate(['perguntas-frequentes-cobrar']);
   }  
 
+  navigateToQRCobrar() {
+    this.router.navigate(['qr-cobrar']);
+  }
+
   goBack() {
     window.history.back();
   }

@@ -44,6 +44,10 @@ export class AreaPixPage {
     this.router.navigate(['copia-cola-pix']);
   }  
 
+  navigateToQrPagar() {
+    this.router.navigate(['qr-pagar']);
+  }
+
   navigateToCobrar() {
     this.router.navigate(['cobrar']);
   }  

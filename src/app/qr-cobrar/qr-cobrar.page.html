@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true" class="fundo">
+  <div class="header">
+    <div class="voltarDiv" (click) = 'goBack()'>
+      <img src="../../assets/Imagens/arrowLeft.png" class="voltarIcon">
+      <p class="voltarTxt">Voltar</p>
+    </div>
+
+    <div>
+      <p class="telaTitulo">Link (Cobrar)</p>
+    </div>
+  </div>
+
+  <form [formGroup]="cobrarForm" class="transparent flexColumn form">
+    <input formControlName="quantia" class="loginTxtBox" placeholder="Valor da Cobrança">
+    <button type="button" class="loginButton" (click)="generateLink()">Gerar</button>
+  </form> 
+
+  <div *ngIf="qrCodeValue" [innerHTML]="qrCodeValue" class="qrCobrança"></div>
+
+  <div>
+    <div class="footer">
+      <div class="flexRow">
+        <img src="../../assets/Imagens/Estácio Logo Banco.png" class="iconFooter">
+        <p class="txtFooter">Estácio Bank</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

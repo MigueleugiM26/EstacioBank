@@ -108,7 +108,15 @@ const routes: Routes = [
   {
     path: 'nova-transferencia',
     loadChildren: () => import('./nova-transferencia/nova-transferencia.module').then( m => m.NovaTransferenciaPageModule)
+  },  {
+    path: 'qr-cobrar',
+    loadChildren: () => import('./qr-cobrar/qr-cobrar.module').then( m => m.QrCobrarPageModule)
   },
+  {
+    path: 'qr-pagar',
+    loadChildren: () => import('./qr-pagar/qr-pagar.module').then( m => m.QrPagarPageModule)
+  },
+
 ];
 
 @NgModule({

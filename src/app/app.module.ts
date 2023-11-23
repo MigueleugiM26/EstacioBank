@@ -15,6 +15,7 @@ import { TransferirPixPage } from './transferir-pix/transferir-pix.page';
 import { LinkCobrarPage } from './link-cobrar/link-cobrar.page';
 import { LinkPagarPage } from './link-pagar/link-pagar.page';
 import { CopiaColaPixPage } from './copia-cola-pix/copia-cola-pix.page';
+import { QrCobrarPage } from './qr-cobrar/qr-cobrar.page';
 import { NovaTransferenciaPage } from './nova-transferencia/nova-transferencia.page';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -23,7 +24,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, LoginPage, SignInPage, TransferirPixPage, LinkCobrarPage, LinkPagarPage, CopiaColaPixPage, NovaTransferenciaPage],
+  declarations: [AppComponent, LoginPage, SignInPage, TransferirPixPage, LinkCobrarPage, 
+    LinkPagarPage, CopiaColaPixPage, NovaTransferenciaPage, QrCobrarPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule, NoopAnimationsModule, 
     ClipboardModule, MatSnackBarModule, BrowserAnimationsModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
