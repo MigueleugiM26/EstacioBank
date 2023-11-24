@@ -28,6 +28,10 @@ export class MenuPrincipalEscondidoPage {
     this.router.navigate(['login']);
   }  
 
+  navigateToConta () {
+    this.router.navigate(['conta-escondida']);
+  }
+
   navigateToView () {
     this.router.navigate(['menu-principal']);
   }
