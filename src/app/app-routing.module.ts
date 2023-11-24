@@ -128,6 +128,18 @@ const routes: Routes = [
     path: 'investir-ecogrow',
     loadChildren: () => import('./investir-ecogrow/investir-ecogrow.module').then( m => m.InvestirEcogrowPageModule)
   },
+  {
+    path: 'emprestimos',
+    loadChildren: () => import('./emprestimos/emprestimos.module').then( m => m.EmprestimosPageModule)
+  },
+  {
+    path: 'conta',
+    loadChildren: () => import('./conta/conta.module').then( m => m.ContaPageModule)
+  },
+  {
+    path: 'conta-escondida',
+    loadChildren: () => import('./conta-escondida/conta-escondida.module').then( m => m.ContaEscondidaPageModule)
+  },
 
 ];
 

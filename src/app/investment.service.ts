@@ -31,7 +31,7 @@ import { AlertController } from '@ionic/angular';
         
             if (currentUserDocSnap.exists()) {
                 const currentUserData = currentUserDocSnap.data();
-                const currentUserDinheiro = Number(currentUserData?.['dinheiro']) || 0;
+                let currentUserDinheiro = Number(currentUserData?.['dinheiro']) || 0;
         
                 if (currentUserDinheiro < amount) {
                     alert('Dinheiro insuficiente.');
@@ -50,23 +50,23 @@ import { AlertController } from '@ionic/angular';
                     const formattedResult = result.toFixed(2);
         
                     if (isSuccess) {
-                        await updateDoc(currentUserDocRef, {
-                            dinheiro: Number(currentUserDinheiro) + Number(formattedResult),
-                        });
-                        const fixMoney = currentUserDinheiro.toFixed(2);
-                        await updateDoc(currentUserDocRef, {
-                            dinheiro: Number (fixMoney),
-                        });
+                      currentUserDinheiro += result;
+                      currentUserDinheiro = Math.round(currentUserDinheiro * 100) / 100;
+
+                      await updateDoc(currentUserDocRef, {
+                          dinheiro: Number(currentUserDinheiro),
+                      });
+
         
                         alert(`Investimento bem sucedido. Você ganhou R$${ formattedResult }.`);
                     } else {
-                        await updateDoc(currentUserDocRef, {
-                            dinheiro: Number(currentUserDinheiro) - Number(amount),
-                        });
-                        const fixMoney = currentUserDinheiro.toFixed(2);
-                        await updateDoc(currentUserDocRef, {
-                            dinheiro: Number (fixMoney),
-                        });
+                      currentUserDinheiro = Number(currentUserData?.['dinheiro']) || 0;
+                      currentUserDinheiro -= Number (amount);
+                      currentUserDinheiro = Number (Math.round(currentUserDinheiro * 100) / 100);
+
+                      await updateDoc(currentUserDocRef, {
+                          dinheiro: Number(currentUserDinheiro),
+                      });
         
                         alert('Infelizmente, o investimento não foi bem sucedido desta vez. Mais sorte na próxima!');
                     }

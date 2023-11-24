@@ -28,7 +28,7 @@ import { AlertController } from '@ionic/angular';
   
         if (currentUserDocSnap.exists()) {
           const currentUserData = currentUserDocSnap.data();
-          const currentUserDinheiro = Number(currentUserData?.['dinheiro']) || 0;
+          let currentUserDinheiro = Number(currentUserData?.['dinheiro']) || 0;
 
           if (isNaN(numericAmount)) {
             alert('Valor inválido.');
@@ -68,20 +68,24 @@ import { AlertController } from '@ionic/angular';
             const cpf = recipientData['cpf'];
             const chaveAleatoria = recipientData['chaveAleatoria'];
             const quantia = numericAmount;
-            const isConfirmed = await this.presentConfirmationAlert(quantia, destinatario, cpf, chaveAleatoria);
+            const isConfirmed = await this.presentConfirmationAlert(quantia, destinatario, cpf, chaveAleatoria, 0);
 
             if (isConfirmed) {
               const recipientDocRef = recipientDocs.docs[0].ref;
-
-              const recipientDinheiro = Number(recipientDocs.docs[0].data()['dinheiro']) || 0;
+              let recipientDinheiro = Number(recipientDocs.docs[0].data()['dinheiro']) || 0;
   
+              currentUserDinheiro -= numericAmount;
+              currentUserDinheiro = Math.round(currentUserDinheiro * 100) / 100;
+              recipientDinheiro += numericAmount;
+              recipientDinheiro = Math.round(recipientDinheiro * 100) / 100;
+
               await updateDoc(currentUserDocRef, {
-                  dinheiro: currentUserDinheiro - numericAmount,
-                });
+                dinheiro: Number (currentUserDinheiro),
+              });
                 
               await updateDoc(recipientDocRef, {
-                  dinheiro: Number(recipientDinheiro) + Number(numericAmount),
-                });
+                dinheiro: Number (recipientDinheiro),
+              });
     
               alert("Transferência bem sucedida");
             }
@@ -99,8 +103,10 @@ import { AlertController } from '@ionic/angular';
       }
     }
 
-    async presentConfirmationAlert(quantia: number, destinatario: string, cpf: string, chaveAleatoria: string): Promise<boolean> {
+    async presentConfirmationAlert(quantia: number, destinatario: string, cpf: string, chaveAleatoria: string, tipo: number): Promise<boolean> {
       return new Promise<boolean>(async (resolve) => {
+
+      if (tipo == 0) {
         const formattedCPF = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
 
         const alert = await this.alertController.create({
@@ -128,7 +134,75 @@ import { AlertController } from '@ionic/angular';
         });
     
         await alert.present();
+      }
+
+      if (tipo == 1) {
+        const alert = await this.alertController.create({
+          header: 'Confirmação',
+          message: `
+            Você vai receber um empréstimo de R$50,00.
+            Confirmar?
+          `,
+          buttons: [
+            {
+              text: 'Não',
+              role: 'cancel',
+              handler: () => {
+                resolve(false);
+              },
+            },
+            {
+              text: 'Sim',
+              handler: () => {
+                resolve(true);
+              },
+            },
+          ],
+        });
+    
+        await alert.present();
+      }
+        
       });
     }
     
+    async emprestimo() {
+      const currentUserEmail = this.authService.getCurrentUser();
+
+      if (!currentUserEmail) {
+        return;
+      }
+
+      try {
+        const currentUserDocRef = doc(this.firestore, 'users', currentUserEmail);
+        const currentUserDocSnap = await getDoc(currentUserDocRef);
+  
+        if (currentUserDocSnap.exists()) {
+          const currentUserData = currentUserDocSnap.data();
+          let currentUserDinheiro = Number(currentUserData?.['dinheiro']) || 0;
+  
+          if (currentUserDinheiro >= 50) {
+            alert("Só é possível receber um empréstimo caso você tenha menos que R$50,00.");
+            return;
+          }
+    
+          const isConfirmed = await this.presentConfirmationAlert(0, "", "", "", 1);
+
+            if (isConfirmed) {
+              currentUserDinheiro += 50;
+
+              await updateDoc(currentUserDocRef, {
+                dinheiro: Math.round(currentUserDinheiro * 100) / 100,
+              });
+                    
+              alert("Empréstimo realizado com sucesso.");
+            }
+          else {
+            alert("O empréstimo não foi realizado.")
+          }            
+        }
+      } catch (error) {
+        alert("Erro ao receber o empréstimo: " + error);
+      }
+    }
   }

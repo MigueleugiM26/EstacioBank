@@ -55,6 +55,10 @@ export class MenuPrincipalPage {
     this.router.navigate(['menu-principal-escondido']);
   }
 
+  navigateToEmprestimos () {
+    this.router.navigate(['emprestimos']);
+  }
+
   refresh(): void {
     const currentUrl = this.router.url;
     this.router.navigateByUrl('/refresh', { skipLocationChange: true }).then(() => {
