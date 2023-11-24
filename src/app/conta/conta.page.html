@@ -1,13 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>conta</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="fundo">
+  <div class="header">
+    <div class="voltarDiv" (click) = 'navigateToMenuPrincipal ()'>
+      <img src="../../assets/Imagens/arrowLeft.png" class="voltarIcon">
+      <p class="voltarTxt">Voltar</p>
+    </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">conta</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <div>
+      <p class="telaTitulo">Conta</p>
+    </div>
+  </div>
+
+  <div>
+    <p class="tituloPagarReceber">{{nome}} {{sobrenome}}</p>
+    <p class="txtPagarReceber">Email: {{ email }}</p>
+    <p class="txtPagarReceber">CPF: {{cpf}}</p>
+    <p class="txtPagarReceber">Chave Aleatória: {{chaveAleatoria}}</p>
+    <p class="txtPagarReceber">Número do Cartão: {{cartao}}</p>
+    <p class="txtPagarReceber">Conta: {{conta}}</p>
+    <p class="txtPagarReceber">CVV: {{cvv}}</p>
+  </div>
+
+  <button class="loginButton" (click)="restartApp()">Sair da Conta</button>
+
+  <div>
+    <div class="footer">
+      <div class="flexRow">
+        <img src="../../assets/Imagens/Estácio Logo Banco.png" class="iconFooter">
+        <p class="txtFooter">Estácio Bank</p>
+      </div>
+    </div>
+  </div>
 </ion-content>

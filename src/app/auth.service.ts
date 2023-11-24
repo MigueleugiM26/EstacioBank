@@ -240,6 +240,20 @@ export class AuthService {
     }
   }
 
+  async getEmail () {
+    const userDocRef = doc(this.firestore, 'users', currentUser);
+    const userDocSnap = await getDoc(userDocRef);
+     
+    if (userDocSnap.exists()) {
+      const userData = userDocSnap.data();
+      const email = userData?.['email'] || null;
+      this.email = email;
+      return email;
+    } else {
+      return null;
+    }
+  }
+
   async getNumCartao () {
     const userDocRef = doc(this.firestore, 'users', currentUser);
     const userDocSnap = await getDoc(userDocRef);

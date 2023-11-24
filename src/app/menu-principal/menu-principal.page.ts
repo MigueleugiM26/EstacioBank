@@ -70,6 +70,10 @@ export class MenuPrincipalPage {
     this.router.navigate(['perguntas-frequentes']);
   }
 
+  navigateToConta () {
+    this.router.navigate(['conta']);
+  }
+
   navigateToAreaPix () {
     this.router.navigate(['area-pix']);
   }
