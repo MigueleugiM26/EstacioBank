@@ -34,7 +34,7 @@
     "@techiediaries/ngx-qrcode": "^9.1.0",
     "@zxing/ngx-scanner": "^17.0.0",
     "crypto-js": "^4.2.0",
-    "firebase": "^10.6.0",
+    "firebase": "^10.14.1",
     "ionicons": "^7.0.0",
     "ngx-scanner": "^0.0.0",
     "qrcode-generator": "^1.4.4",

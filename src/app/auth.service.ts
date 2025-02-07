@@ -1,18 +1,23 @@
 import { Injectable } from '@angular/core';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, UserCredential } from 'firebase/auth';
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  UserCredential,
+} from 'firebase/auth';
 import { doc, setDoc, getFirestore } from 'firebase/firestore';
 import { getDocs, getDoc, query, where } from 'firebase/firestore';
-import { collection } from "firebase/firestore"; 
-import { db } from "../main";
+import { collection } from 'firebase/firestore';
+import { db } from '../main';
 
-let currentUser: string | "";
+let currentUser: string | '';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private auth = getAuth();
-  private firestore = getFirestore(); 
+  private firestore = getFirestore();
   private usersCollectionRef = collection(this.firestore, 'users');
 
   private nome: string | undefined;
@@ -26,159 +31,190 @@ export class AuthService {
   private validade: string | undefined;
   private dinheiro: number | undefined;
 
-  register(nome: string, sobrenome: string, cpf: string, email: string, password: string): Promise<void> {
-    return createUserWithEmailAndPassword(this.auth, email, password)
-      .then(async (userCredential: UserCredential) => {
-        const user = userCredential.user;
+  async register(
+    nome: string,
+    sobrenome: string,
+    cpf: string,
+    email: string,
+    password: string
+  ): Promise<void> {
+    const userCredential = await createUserWithEmailAndPassword(
+      this.auth,
+      email,
+      password
+    );
+    const user = userCredential.user;
+    try {
+      const chaveAleatoria = await this.makeChaveAleatoria();
+      const numeroCartao = await this.makeNumCartaoAleatorio();
+      const conta = await this.makeContaAleatoria();
+      const cvv = await this.makeCVVAleatorio();
+      const validade = this.calculateExpirationDate();
+      const validadeString = validade.toLocaleDateString('pt-BR');
 
-        try {
-          const chaveAleatoria = await this.makeChaveAleatoria();
-          const numeroCartao = await this.makeNumCartaoAleatorio();
-          const conta = await this.makeContaAleatoria();
-          const cvv = await this.makeCVVAleatorio();
-          const validade = this.calculateExpirationDate();
-          const validadeString = validade.toLocaleDateString('pt-BR'); 
-
-          const docRef = doc(db, 'users', email);
-          await setDoc(docRef, {
-            nome,
-            sobrenome,
-            cpf,
-            email,
-            chaveAleatoria,
-            numeroCartao,
-            conta,
-            cvv,
-            validade: validadeString,
-            dinheiro: 100,
-          });
-        } catch (e) {
-          console.error("Error adding document: ", e);
-        }
+      const docRef = doc(db, 'users', email);
+      await setDoc(docRef, {
+        nome,
+        sobrenome,
+        cpf,
+        email,
+        chaveAleatoria,
+        numeroCartao,
+        conta,
+        cvv,
+        validade: validadeString,
+        dinheiro: 100,
       });
+    } catch (e) {
+      console.error('Error adding document: ', e);
+    }
   }
 
   async makeChaveAleatoria(): Promise<string> {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const characters =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     const charactersLength = characters.length;
- 
+
     while (true) {
-      
       let result = '';
-  
+
       for (let i = 0; i < 9; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        result += characters.charAt(
+          Math.floor(Math.random() * charactersLength)
+        );
       }
-  
+
       result += '-';
-  
+
       for (let i = 0; i < 3; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        result += characters.charAt(
+          Math.floor(Math.random() * charactersLength)
+        );
       }
-      
+
       const isUnique = await this.isChaveAleatoriaUnique(result);
-        
+
       if (isUnique) {
         return result;
       }
     }
   }
-  
+
   async isChaveAleatoriaUnique(chaveAleatoria: string): Promise<boolean> {
-    const querySnapshot = await getDocs(query(this.usersCollectionRef, where('chaveAleatoria', '==', chaveAleatoria)));
+    const querySnapshot = await getDocs(
+      query(
+        this.usersCollectionRef,
+        where('chaveAleatoria', '==', chaveAleatoria)
+      )
+    );
     return querySnapshot.empty;
   }
 
   async makeNumCartaoAleatorio(): Promise<string> {
     const characters = '0123456789';
     const charactersLength = characters.length;
- 
+
     while (true) {
-      
       let result = '';
-  
+
       for (let j = 0; j < 4; j++) {
         for (let i = 0; i < 4; i++) {
-          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+          result += characters.charAt(
+            Math.floor(Math.random() * charactersLength)
+          );
         }
-    
-        if (j < 3) { result += ' '; }
+
+        if (j < 3) {
+          result += ' ';
+        }
       }
-        
+
       const isUnique = await this.isNumCartaoUnique(result);
-        
+
       if (isUnique) {
         return result;
       }
     }
   }
-  
+
   async isNumCartaoUnique(conta: string): Promise<boolean> {
-    const querySnapshot = await getDocs(query(this.usersCollectionRef, where('conta', '==', conta)));
+    const querySnapshot = await getDocs(
+      query(this.usersCollectionRef, where('conta', '==', conta))
+    );
     return querySnapshot.empty;
   }
 
   async makeContaAleatoria(): Promise<string> {
     const characters = '0123456789';
     const charactersLength = characters.length;
- 
+
     while (true) {
-      
       let result = '';
-  
+
       for (let i = 0; i < 4; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        result += characters.charAt(
+          Math.floor(Math.random() * charactersLength)
+        );
       }
-  
-      result += ' '; 
+
+      result += ' ';
 
       for (let i = 0; i < 12; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        result += characters.charAt(
+          Math.floor(Math.random() * charactersLength)
+        );
       }
-  
-      result += '-'; 
+
+      result += '-';
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
-              
+
       const isUnique = await this.isContaUnique(result);
-        
+
       if (isUnique) {
         return result;
       }
     }
   }
-  
+
   async isContaUnique(conta: string): Promise<boolean> {
-    const querySnapshot = await getDocs(query(this.usersCollectionRef, where('conta', '==', conta)));
+    const querySnapshot = await getDocs(
+      query(this.usersCollectionRef, where('conta', '==', conta))
+    );
     return querySnapshot.empty;
   }
 
   async makeCVVAleatorio(): Promise<string> {
     const characters = '0123456789';
     const charactersLength = characters.length;
- 
+
     while (true) {
-      
       let result = '';
-  
+
       for (let i = 0; i < 3; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        result += characters.charAt(
+          Math.floor(Math.random() * charactersLength)
+        );
       }
-        
+
       const isUnique = await this.isCVVUnique(result);
-        
+
       if (isUnique) {
         return result;
       }
     }
   }
-  
+
   async isCVVUnique(cvv: string): Promise<boolean> {
-    const querySnapshot = await getDocs(query(this.usersCollectionRef, where('cvv', '==', cvv)));
+    const querySnapshot = await getDocs(
+      query(this.usersCollectionRef, where('cvv', '==', cvv))
+    );
     return querySnapshot.empty;
   }
 
   async isCPFUnique(cpf: string): Promise<boolean> {
-    const querySnapshot = await getDocs(query(this.usersCollectionRef, where('cpf', '==', cpf)));
+    const querySnapshot = await getDocs(
+      query(this.usersCollectionRef, where('cpf', '==', cpf))
+    );
     return querySnapshot.empty;
   }
 
@@ -192,16 +228,16 @@ export class AuthService {
     expirationDate = new Date(expirationYear, expirationMonth, expirationDay);
     return expirationDate;
   }
-  
+
   async login(email: string, password: string): Promise<void> {
-    await signInWithEmailAndPassword(this.auth, email, password)
+    await signInWithEmailAndPassword(this.auth, email, password);
     currentUser = email;
   }
 
-  async getSaldo () {
+  async getSaldo() {
     const userDocRef = doc(this.firestore, 'users', currentUser);
     const userDocSnap = await getDoc(userDocRef);
-     
+
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const saldo = userData?.['dinheiro'] || null;
@@ -212,10 +248,10 @@ export class AuthService {
     }
   }
 
-  async getNome () {
+  async getNome() {
     const userDocRef = doc(this.firestore, 'users', currentUser);
     const userDocSnap = await getDoc(userDocRef);
-     
+
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const nome = userData?.['nome'] || null;
@@ -226,10 +262,10 @@ export class AuthService {
     }
   }
 
-  async getSobrenome () {
+  async getSobrenome() {
     const userDocRef = doc(this.firestore, 'users', currentUser);
     const userDocSnap = await getDoc(userDocRef);
-     
+
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const sobrenome = userData?.['sobrenome'] || null;
@@ -240,10 +276,10 @@ export class AuthService {
     }
   }
 
-  async getEmail () {
+  async getEmail() {
     const userDocRef = doc(this.firestore, 'users', currentUser);
     const userDocSnap = await getDoc(userDocRef);
-     
+
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const email = userData?.['email'] || null;
@@ -254,10 +290,10 @@ export class AuthService {
     }
   }
 
-  async getNumCartao () {
+  async getNumCartao() {
     const userDocRef = doc(this.firestore, 'users', currentUser);
     const userDocSnap = await getDoc(userDocRef);
-     
+
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const numCartao = userData?.['numeroCartao'] || null;
@@ -268,10 +304,10 @@ export class AuthService {
     }
   }
 
-  async getValidade () {
+  async getValidade() {
     const userDocRef = doc(this.firestore, 'users', currentUser);
     const userDocSnap = await getDoc(userDocRef);
-     
+
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const validade = userData?.['validade'] || null;
@@ -281,11 +317,11 @@ export class AuthService {
       return null;
     }
   }
-  
-  async getConta () {
+
+  async getConta() {
     const userDocRef = doc(this.firestore, 'users', currentUser);
     const userDocSnap = await getDoc(userDocRef);
-     
+
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const conta = userData?.['conta'] || null;
@@ -296,10 +332,10 @@ export class AuthService {
     }
   }
 
-  async getCVV () {
+  async getCVV() {
     const userDocRef = doc(this.firestore, 'users', currentUser);
     const userDocSnap = await getDoc(userDocRef);
-     
+
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const cvv = userData?.['cvv'] || null;
@@ -310,14 +346,17 @@ export class AuthService {
     }
   }
 
-  async getCPF () {
+  async getCPF() {
     const userDocRef = doc(this.firestore, 'users', currentUser);
     const userDocSnap = await getDoc(userDocRef);
-     
+
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const cpf = userData?.['cpf'] || null;
-      const formattedCPF = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+      const formattedCPF = cpf.replace(
+        /(\d{3})(\d{3})(\d{3})(\d{2})/,
+        '$1.$2.$3-$4'
+      );
       this.cpf = formattedCPF;
       return formattedCPF;
     } else {
@@ -325,10 +364,10 @@ export class AuthService {
     }
   }
 
-  async getRawCPF () {
+  async getRawCPF() {
     const userDocRef = doc(this.firestore, 'users', currentUser);
     const userDocSnap = await getDoc(userDocRef);
-     
+
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const cpf = userData?.['cpf'] || null;
@@ -338,10 +377,10 @@ export class AuthService {
     }
   }
 
-  async getChaveAleatoria () {
+  async getChaveAleatoria() {
     const userDocRef = doc(this.firestore, 'users', currentUser);
     const userDocSnap = await getDoc(userDocRef);
-     
+
     if (userDocSnap.exists()) {
       const userData = userDocSnap.data();
       const chaveAleatoria = userData?.['chaveAleatoria'] || null;
@@ -352,7 +391,7 @@ export class AuthService {
     }
   }
 
-  update (){
+  update() {
     this.getSaldo();
     this.getNome;
     this.getSobrenome;
@@ -364,7 +403,7 @@ export class AuthService {
     this.getCVV;
   }
 
-  getCurrentUser () {
+  getCurrentUser() {
     return currentUser;
   }
 }

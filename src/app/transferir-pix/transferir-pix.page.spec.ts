@@ -1,11 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { TransferirPixPage } from './transferir-pix.page';
 
 describe('TransferirPixPage', () => {
   let component: TransferirPixPage;
   let fixture: ComponentFixture<TransferirPixPage>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     fixture = TestBed.createComponent(TransferirPixPage);
     component = fixture.componentInstance;
     fixture.detectChanges();

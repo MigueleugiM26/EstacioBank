@@ -1,11 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { QrCobrarPage } from './qr-cobrar.page';
 
 describe('QrCobrarPage', () => {
   let component: QrCobrarPage;
   let fixture: ComponentFixture<QrCobrarPage>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     fixture = TestBed.createComponent(QrCobrarPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
